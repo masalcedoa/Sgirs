@@ -1,0 +1,75 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">Sgirs App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">Acerca de</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        {{#if user}}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Menu
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/sector">Lista de Sectores</a>
+            <a class="dropdown-item" href="/sector/add">Agregar Sectores</a>
+            <a class="dropdown-item" href="/periodos">Lista de Periodos</a>
+            <a class="dropdown-item" href="/periodos/add">Agregar Periodos</a>
+            <a class="dropdown-item" href="/asks">Lista de Preguntas</a>
+            <a class="dropdown-item" href="/ask/add">Agregar Preguntas</a>
+            <a class="dropdown-item" href="/answer/add">Listado Respuestas</a>
+            <a class="dropdown-item" href="/answer/add">Agregar Respuestas</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/ask-sector/">Listado Respuestas</a>
+            <a class="dropdown-item" href="/ask-sector/add">Agregar Respuestas</a>
+            <a class="dropdown-item" href="/ask-answer/">Listado Pregunta Respuesta</a>
+            <a class="dropdown-item" href="/ask-answer/add">Pregunta Respuesta</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/ask-answer/">Registro de Preguntas</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/usuario/logout">Logout</a>
+          </div>
+
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Gestion
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/rasks">Registro de Preguntas</a>
+            <a class="dropdown-item" href="/rasks/add">Agregar Preguntas</a>
+
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/rind">Registro de Indicadores</a>
+            <a class="dropdown-item" href="/rind/add">Agregar Indicadores</a>
+          </div>
+
+
+
+        </li>
+
+        {{else}}
+        <li class="nav-item">
+          <a class="nav-link" href="/usuario/signin">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/usuario/signup">Register</a>
+        </li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</nav>

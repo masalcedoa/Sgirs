@@ -1,0 +1,45 @@
+<div class="col-md-4 mx-auto">
+  <div class="card text-center">
+    <div class="card-header">
+      <h3>Agregar Pregunta</h3>
+    </div>
+    <div class="card-body">
+      <form action="/asks/new-ask" method="POST">
+        <div class="form-group">
+          <input type="number" name="idPregunta" class="form-control" placeholder="Id Pregunta" autofocus />
+        </div>
+
+        <div class="form-group">
+          <input type="text" name="pregunta" class="form-control" placeholder="Pregunta" autofocus />
+        </div>
+        <div>
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" name="indArchivo" type="checkbox" value=false id="indArchivo">
+              <label class="form-check-label" for="flexCheckDefault">
+                Permite Archivo
+              </label>
+
+
+
+              <div class="form-group">
+                <div class="form-check">
+                  <input class="form-check-input" name="{{indTexto}}" type="checkbox" value=false id="indTexto">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Permite texto
+                  </label>
+                </div>
+              </div>
+
+            </div>
+
+
+            <div class="form-group">
+              <button class="btn btn-primary btn-block" type="submit">
+                Grabar
+              </button>
+            </div>
+      </form>
+    </div>
+  </div>
+</div>
