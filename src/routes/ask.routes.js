@@ -7,7 +7,7 @@ const { createNewAsk,rederAskForm,updateAsk, renderEditAskForm, renderAsk, delet
 const { isAuthenticated } = require('../helpers/auth');
 
 //New Notes
-console.log("Ruta con autenticacion");
+//console.log("Ruta con autenticacion");
 router.get('/ask/add' ,isAuthenticated, rederAskForm);
 
 router.post('/asks/new-ask', isAuthenticated, createNewAsk);

@@ -5,40 +5,55 @@
     </div>
     <div class="card-body">
       <form action="/asks/new-ask" method="POST">
+
         <div class="form-group">
-          <input type="number" name="idPregunta" class="form-control" placeholder="Id Pregunta" autofocus />
+          <select class="form-control" name="CodSector" id="CodSector" placeholder="Sector">
+            {{#each lSectores}}
+            <option value={{CodSector}}>{{ Descripcion }}</option>
+            {{/each}}
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="text" name="idPregunta" class="form-control" placeholder="Id Pregunta" autofocus />
         </div>
 
         <div class="form-group">
           <input type="text" name="pregunta" class="form-control" placeholder="Pregunta" autofocus />
         </div>
-        <div>
-          <div class="form-group">
-            <div class="form-check">
-              <input class="form-check-input" name="indArchivo" type="checkbox" value=false id="indArchivo">
-              <label class="form-check-label" for="flexCheckDefault">
-                Permite Archivo
-              </label>
+
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" name="indArchivo" type="checkbox" value= {{#if checked}}false{{else}}true{{/if}}
+            id="indArchivo"
+            for="flexCheckDefault"
+
+            >
+            <!--{{#if checkBox.checked}}value=false{{else}}value=true{{/if}}*/-->
+            <label class="form-check-label" for="flexCheckDefault">
+              
+              Permite Archivo
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" name="indTexto" type="checkbox"  id="indTexto"
+            {{#if checked}}value=false{{else}}value=true{{/if}}
+            >
+            <label class="form-check-label" for="flexCheckDefault">
+              Permite texto
+            </label>
+          </div>
+        </div>
 
 
 
-              <div class="form-group">
-                <div class="form-check">
-                  <input class="form-check-input" name="{{indTexto}}" type="checkbox" value=false id="indTexto">
-                  <label class="form-check-label" for="flexCheckDefault">
-                    Permite texto
-                  </label>
-                </div>
-              </div>
-
-            </div>
-
-
-            <div class="form-group">
-              <button class="btn btn-primary btn-block" type="submit">
-                Grabar
-              </button>
-            </div>
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" type="submit">
+            Grabar
+          </button>
+        </div>
       </form>
     </div>
   </div>

@@ -3,13 +3,18 @@ const {Schema, model} = require('mongoose');
 const AnskerSchema = new Schema(
     {
       idRespuesta: {
-        type: String,
+        type: Number,
         required: true,
         unique : true
       },
       Respuesta: {
         type: String,
         required: true,
+      },
+      idPregunta: {
+        type: Number,
+        required: true,
+        unique : true
       },
       user: {
         type: String,
@@ -21,5 +26,5 @@ const AnskerSchema = new Schema(
     }
   );
 
-  module.exports = model("Ansker", AnskerSchema);
+  module.exports = model("anskers", AnskerSchema);
   

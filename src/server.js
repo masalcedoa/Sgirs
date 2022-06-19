@@ -54,6 +54,7 @@ app.use((req, res, next) => {
   res.locals.error_msg = req.flash("error_msg");
   res.locals.error = req.flash("error");
   res.locals.user = req.user || null;
+  //console.log("en el server", res.locals.user );
   next();
 });
 
@@ -70,6 +71,7 @@ app.use(require('./routes/usuario.routes'));
 app.use(require('./routes/sector.routes'));
 app.use(require('./routes/ask.routes'));
 app.use(require('./routes/periodo.routes'));
+app.use(require('./routes/rask.routes'));
 
 
 //static files

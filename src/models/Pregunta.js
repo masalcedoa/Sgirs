@@ -3,7 +3,7 @@ const {Schema, model} = require('mongoose');
 const AskSchema = new Schema(
     {
       idPregunta: {
-        type: Number,
+        type: String,
         required: true,
         unique : true
       },
@@ -18,6 +18,12 @@ const AskSchema = new Schema(
       indTexto: {
         type: Boolean,
         required: false,
+      },
+      CodSector: {
+        type: String,
+        required: true,
+//        unique: true, 
+        trim: true
       },
       user: {
         type: String,

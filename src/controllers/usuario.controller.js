@@ -140,13 +140,20 @@ usersCtrl.signin = passport.authenticate("local", {
 
 usersCtrl.SigninValidRest = async (req, res) => {
 
+
+
   const { correo, codSector, Periodo } = req.body;
 
   const cResult = await User.findOne({ correo: correo, codSector : codSector });
 
+  
+  //console.log("Valid Result User:",cResult );
 
-  console.log("Valid Result User:",cResult );
+  const uSession = cResult.correo;
+  
+  module.exports = uSession;
 
+  
   if (!cResult) {
     req.flash("success_msg", "Login failure");
     res.redirect("/usuario/signin");
@@ -197,3 +204,4 @@ usersCtrl.logout = (req, res) => {
 
 
 module.exports = usersCtrl;
+

@@ -1,7 +1,7 @@
 const helpers = {};
 
 helpers.isAuthenticated = (req, res, next) => {
-    console.log("autentica");
+    //console.log("autentica");
     if (req.isAuthenticated()) {
       return next();
     }
