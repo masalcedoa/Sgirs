@@ -1,5 +1,6 @@
 const res = require("express/lib/response");
 const rAsk = require("../models/Pregunta");
+const rAnskers = require("../models/Respuesta");
 const registro = require("../models/RegistroPregunta");
 const raskCtrl = {};
 
@@ -28,12 +29,20 @@ raskCtrl.rederrAskForm = async (req, res) => {
     const lPreguntas = await rAsk.find({CodSector : req.user.codSector})
     .sort({ date: "desc" })
     .lean();
+
+    const lRespuestas = await rAnskers.find()
+    .sort({ date: "desc" })
+    .lean();
     
 
     console.log("preguntas  devueltas: ", lPreguntas);
+    var lista = {};
+
+    lista = {lPreguntas,lRespuestas};
 
 
-    res.render('rasks/new-rAsk',{ lPreguntas });
+   // res.render('rasks/new-rAsk',{ lPreguntas,lRespuestas });
+   res.render('rasks/new-rAsk', lista );
 
 }
 
