@@ -3,16 +3,16 @@ const {Schema, model} = require('mongoose');
 const AnskerSchema = new Schema(
     {
       idRespuesta: {
-        type: Number,
+        type: String,
         required: true,
         unique : true
       },
-      Respuesta: {
+      respuesta: {
         type: String,
         required: true,
       },
-      idPregunta: {
-        type: Number,
+      idPreguntaR: {
+        type: String,
         required: true,
         unique : true
       },
