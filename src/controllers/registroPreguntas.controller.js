@@ -40,6 +40,7 @@ raskCtrl.rederrAskForm = async (req, res) => {
 
     lista = {lPreguntas,lRespuestas};
 
+    
 
    // res.render('rasks/new-rAsk',{ lPreguntas,lRespuestas });
    res.render('rasks/new-rAsk', lista );
