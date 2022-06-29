@@ -13,6 +13,11 @@ const PeriodoSchema = new Schema(
         required: true,
         trim: true
       },
+      Estado: {
+        type: Boolean,
+        required: false,
+        trim: true
+      },
       user: {
         type: String,
         required: true,

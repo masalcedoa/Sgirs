@@ -6,7 +6,7 @@ PeriodosCtrl.rederPeriodoForm = (req, res) => {
     //res.send('Periodo add');
     console.log(req.body);
     //const Periodos = await Periodo.find();
-    const { Periodo, Descripcion } = req.body;
+    const { Periodo, Descripcion, Estado } = req.body;
     //const newPeriodo = new Periodo({Periodo: Periodo, Descripcion: Descripcion});
 
 
@@ -29,9 +29,10 @@ PeriodosCtrl.createNewPeriodos = async (req, res) => {
             errors,
             Periodo,
             Descripcion,
+            Estado
         });
     } else {
-        const newPeriodo = new PeriodoC({ Periodo, Descripcion });
+        const newPeriodo = new PeriodoC({ Periodo, Descripcion, Estado });
        // console.log(req.user.id);
         newPeriodo.user = req.user.id;
         await newPeriodo.save();
@@ -76,7 +77,7 @@ PeriodosCtrl.deletePeriodo = async (req, res) => {
 
 PeriodosCtrl.updatePeriodo = async (req, res) => {
     const { Periodo, Descripcion } = req.body;
-    await PeriodoC.findByIdAndUpdate(req.params.id, { Periodo, Descripcion });
+    await PeriodoC.findByIdAndUpdate(req.params.id, { Periodo, Descripcion, Estado });
     console.log("update");
     req.flash("success_msg", "Periodo Updated Successfully");
     res.redirect("/Periodos");

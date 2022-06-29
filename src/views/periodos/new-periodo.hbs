@@ -6,11 +6,22 @@
     <div class="card-body">
       <form action="/Periodos/new-Periodo" method="POST">
         <div class="form-group">
-          <input type="text" name="Periodo" class="form-control" placeholder="Periodo" autofocus/>
+          <input type="text" name="Periodo" class="form-control" placeholder="Periodo" autofocus />
         </div>
         <div class="form-group">
           <textarea name="Descripcion" class="form-control" placeholder="Descripcion"></textarea>
         </div>
+
+
+        <div class="form-check">
+
+          <label class="form-check-label" for="flexCheckDefault">
+            <input class="form-check-input" name="Estado" type="checkbox" value={{ Estado}} id="Estado" {{#if
+              Estado}}checked="checked" {{/if}}>
+            Activo
+          </label>
+        </div>
+
         <div class="form-group">
           <button class="btn btn-primary btn-block" type="submit">
             Grabar
@@ -20,4 +31,3 @@
     </div>
   </div>
 </div>
-
