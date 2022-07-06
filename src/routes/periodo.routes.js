@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const router = Router();
 
-const { rederPeriodoForm, createNewPeriodos, renderPeriodos, renderEditForm, updateForm, deletePeriodo, updatePeriodo } = require('../controllers/Periodo.controller');
+const { rederPeriodoForm, createNewPeriodos, renderPeriodos, renderEditForm, updateForm, deletePeriodo, updatePeriodo } = require('../controllers/periodo.controller');
 
 const { isAuthenticated } = require('../helpers/auth');
 
