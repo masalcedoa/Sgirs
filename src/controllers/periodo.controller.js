@@ -15,14 +15,14 @@ PeriodosCtrl.rederPeriodoForm = (req, res) => {
 
 PeriodosCtrl.createNewPeriodos = async (req, res) => {
     console.log(req.body);
-    const { Periodo, Descripcion } = req.body;
+    const { Periodo, Descripcion, Estado } = req.body;
 
     const errors = [];
     if (!Periodo) {
         errors.push({ text: "Por favor digite el Periodo." });
     }
     if (!Descripcion) {
-        errors.push({ text: "Por favor digite laa Descripcion" });
+        errors.push({ text: "Por favor digite la Descripcion" });
     }
     if (errors.length > 0) {
         res.render("Periodos/new-Periodo", {
@@ -54,10 +54,10 @@ PeriodosCtrl.renderPeriodos = async (req, res) => {
 
 PeriodosCtrl.renderEditForm = async (req, res) => {
     const Periodos = await PeriodoC.findById(req.params.id).lean();
-    if (PeriodoC.user != req.user.id) {
+    /*if (PeriodoC.user != req.user.id) {
       req.flash("error_msg", "Not Authorized");
       return res.redirect("/Periodos");
-    }
+    }*/
     res.render("Periodos/edit-Periodo", { Periodos });
 }
 
@@ -76,7 +76,7 @@ PeriodosCtrl.deletePeriodo = async (req, res) => {
 }
 
 PeriodosCtrl.updatePeriodo = async (req, res) => {
-    const { Periodo, Descripcion } = req.body;
+    const { Periodo, Descripcion, Estado } = req.body;
     await PeriodoC.findByIdAndUpdate(req.params.id, { Periodo, Descripcion, Estado });
     console.log("update");
     req.flash("success_msg", "Periodo Updated Successfully");

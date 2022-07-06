@@ -21,6 +21,23 @@
         <div class="form-group">
           <textarea name="Descripcion" class="form-control">{{Periodos.Descripcion}}</textarea>
         </div>
+
+
+                <div class="form-check">
+
+          <label class="form-check-label" for="flexCheckDefault">
+            <input class="form-check-input" name="Estado" type="checkbox"
+            value={{Periodos.Estado}} id="Estado"
+
+           {{#if Periodos.Estado}}checked="checked"{{/if}}
+
+
+             >
+            Permite Activo
+          </label>
+        </div>
+
+
         <div class="form-group">
           <button class="btn btn-primary btn-block" type="submit">
             Save

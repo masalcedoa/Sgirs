@@ -11,11 +11,6 @@ const AnskerSchema = new Schema(
         type: String,
         required: true,
       },
-      idPreguntaR: {
-        type: String,
-        required: true,
-        unique : true
-      },
       user: {
         type: String,
         required: true,
@@ -26,5 +21,5 @@ const AnskerSchema = new Schema(
     }
   );
 
-  module.exports = model("anskers", AnskerSchema);
+  module.exports = model("anskwers", AnskerSchema);
   

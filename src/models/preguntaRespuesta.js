@@ -1,14 +1,18 @@
 const {Schema, model} = require('mongoose');
 
-const rsSchema = new Schema(
+const rptaSchema = new Schema(
     {
-      idPregunta: {
-        type: Number,
-        required: true,
-        unique : true
-      },
       idRespuesta: {
-        type: Number,
+        type: String,
+        required: true,
+        unique : false
+      },
+      respuesta: {
+        type: String,
+        required: true,
+      },
+      idPregunta: {
+        type: String,
         required: true,
       },
       user: {
@@ -21,5 +25,6 @@ const rsSchema = new Schema(
     }
   );
 
-  module.exports = model("preguntaRespuestas", rsSchema);
+  module.exports = model("respuestasgrs", rptaSchema);
+
   

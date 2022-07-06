@@ -1,29 +1,38 @@
 const {Schema, model} = require('mongoose');
 
-const AskSchema = new Schema(
+const vrptaSchema = new Schema(
     {
       idPregunta: {
         type: String,
         required: true,
-        unique : true
       },
       pregunta: {
         type: String,
         required: true,
       },
       indArchivo: {
-        type: Boolean,
+        type: String,
         required: true,
       },
       indTexto: {
-        type: Boolean,
-        required: false,
+        type: String,
+        required: true,
       },
       codSector: {
         type: String,
         required: true,
-//        unique: true, 
-        trim: true
+      },
+      respuesta1: {
+        type: String,
+        required: true,
+      },
+      respuesta2: {
+        type: String,
+        required: true,
+      },
+      respuesta3: {
+        type: String,
+        required: true,
       },
       user: {
         type: String,
@@ -35,5 +44,6 @@ const AskSchema = new Schema(
     }
   );
 
-  module.exports = model("asks", AskSchema);
+  module.exports = model("vrpreguntasgrs", vrptaSchema);
+
   

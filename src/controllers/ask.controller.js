@@ -93,10 +93,26 @@ askCtrl.createNewAsk = async (req, res) => {
 askCtrl.renderAsk = async (req, res) => {
     //res.send('Render Asks');
     //const preguntas = await Ask.find({ user: req.user.id })
-    const preguntas = await Ask.find()
+
+    console.log("registro",req.user.codSector);
+
+    //const { codSector} = usuario.findOne({ correo: req.user.cod });
+    //const user = await User.findOne({ correo: email });
+    //const uSector = await Ask.findById(req.params.id).lean();
+
+
+        //console.log("se identifica sector:",codSector);
+    //const preguntas = await Ask.find()
+    //const preguntas = await Ask.find({ codSector: codSector })
+   // const preguntas = await Ask.find({codSector:"SEC002"})
+   const preguntas = await Ask.find({codSector:req.user.codSector})
         .sort({ date: "desc" })
         .lean();
-    res.render("asks/all-ask", { preguntas });
+
+
+        //console.log(preguntas);
+
+    res.render("asks/all-ask", { preguntas});
 }
 
 askCtrl.renderEditAskForm = async (req, res) => {

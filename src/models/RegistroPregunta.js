@@ -102,6 +102,36 @@ const rAskSchema = new Schema(
         required: false,
         unique : false
       },
+      P00000021: {
+        type: String,
+        required: false,
+        unique : false
+      },
+      P00000022: {
+        type: String,
+        required: false,
+        unique : false
+      },
+      P00000023: {
+        type: String,
+        required: false,
+        unique : false
+      },
+      P00000024: {
+        type: String,
+        required: false,
+        unique : false
+      },
+      P00000025: {
+        type: String,
+        required: false,
+        unique : false
+      },
+      P00000026: {
+        type: String,
+        required: false,
+        unique : false
+      },
       CodSector: {
         type: String,
         required: true,

@@ -10,7 +10,7 @@ const { isAuthenticated } = require('../helpers/auth');
 console.log("Ruta con autenticacion");
 router.get('/rasks/add' ,isAuthenticated, rederrAskForm);
 
-router.post('/rasks/new-ask', isAuthenticated, createNewrAsk);
+router.post('/rasks/new-rask', isAuthenticated, createNewrAsk);
 
 //Get all Notes
 router.get('/rasks', isAuthenticated, renderrAsk);

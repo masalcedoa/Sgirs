@@ -1,7 +1,13 @@
 const res = require("express/lib/response");
 const rAsk = require("../models/Pregunta");
-const rAnskers = require("../models/Respuesta");
+//const rAnskers = require("../models/Respuesta");
 const registro = require("../models/RegistroPregunta");
+//const rAnskers = require("../models/preguntaRespuesta");
+//const respuestasPreguntas = require("../models/PreguntaRespuesta");
+
+//const respuestas = require("../models/Respuesta");
+const respuestasPreguntas = require("../models/vrpreguntasgrs");
+
 const raskCtrl = {};
 
 const sector  = require("../models/Sector");
@@ -25,25 +31,32 @@ raskCtrl.rederrAskForm = async (req, res) => {
     //console.log("valor de cod sector", req.user.codSector);
 
     //console.log("valor de ras", rAsk);
+   /*const lrespuestas = await respuestasPreguntas.find()
+    .sort({ respuesta : "desc" })
+    .lean();*/
 
-    const lPreguntas = await rAsk.find({CodSector : req.user.codSector})
-    .sort({ date: "desc" })
-    .lean();
+    //const lRespuestas = await respuestasPreguntas.find().lean();
 
-    const lRespuestas = await rAnskers.find()
-    .sort({ date: "desc" })
+    //const lRespuestaSolo = await respuestas.find().lean();
+
+
+    const lPreguntas = await respuestasPreguntas.find({codSector : req.user.codSector})
+    .sort({ idPregunta : "asc" })
     .lean();
-    
 
     console.log("preguntas  devueltas: ", lPreguntas);
-    var lista = {};
+   //console.log("respuestas  devueltas: ", lrespuestas);
+   /*
+   console.log("respuestas  sector: ", req.user.codSector);
+   console.log("Respuesta solo", lRespuestaSolo);*/
+   
 
-    lista = {lPreguntas,lRespuestas};
+    //var lista = {};
 
-    
+   //lista = {lPreguntas,lRespuestas};
 
-   // res.render('rasks/new-rAsk',{ lPreguntas,lRespuestas });
-   res.render('rasks/new-rAsk', lista );
+        res.render('rasks/new-rask',{ lPreguntas });
+   //res.render('rasks/new-rask', lista );
 
 }
 
@@ -51,8 +64,11 @@ raskCtrl.createNewrAsk = async (req, res) => {
     
     console.log("a crear registro :",req.body);
 
-    var { P00000001,P00000002,P00000003,P00000004,
-        P00000005,P00000006,P00000007,P00000008,P00000009,CodSector } = req.body;
+    var {P00000001,P00000002,P00000003,P00000004,
+        P00000005,P00000006,P00000007,P00000008,P00000009,P00000010, P00000011,P00000012,P00000013,
+        P00000014,P00000015,P00000016,P00000017, P00000018, P00000019,P00000020,P00000021,P00000017,P00000022,P00000023,P00000024,
+        P00000025,P00000026,
+        CodSector } = req.body;
     //console.log("Permite Archivo",indArchivo);
     //console.log("Permite Texto",indTexto);*/
 
@@ -90,7 +106,9 @@ raskCtrl.createNewrAsk = async (req, res) => {
         res.render("rasks/new-rask", {
             errors,
             P00000001,P00000002,P00000003,P00000004,
-            P00000005,P00000006,P00000007,P00000008,P00000009,
+            P00000005,P00000006,P00000007,P00000008,P00000009,P00000010, P00000011,P00000012,P00000013,
+            P00000014,P00000015,P00000016,P00000017, P00000018, P00000019,P00000020,P00000021,P00000017,P00000022,P00000023,P00000024,
+            P00000025,P00000026,
             CodSector
         });
     } else {
@@ -98,9 +116,10 @@ raskCtrl.createNewrAsk = async (req, res) => {
         
 
 
-        const newRegistro = new registro({P00000001,P00000002,P00000003,
-            P00000004,P00000005,P00000006,P00000007,P00000008,
-            P00000009,
+        const newRegistro = new registro({P00000001,P00000002,P00000003,P00000004,
+            P00000005,P00000006,P00000007,P00000008,P00000009,P00000010, P00000011,P00000012,P00000013,
+            P00000014,P00000015,P00000016,P00000017, P00000018, P00000019,P00000020,P00000021,P00000017,P00000022,P00000023,P00000024,
+            P00000025,P00000026,
             CodSector});
 
             newRegistro.user = req.user.id;
@@ -122,7 +141,7 @@ raskCtrl.createNewrAsk = async (req, res) => {
 raskCtrl.renderrAsk = async (req, res) => {
     //res.send('Render rAsks');
     //const preguntas = await rAsk.find({ user: req.user.id })
-    const preguntas = await rAsk.find()
+    const preguntas = await registro.find({ codSector: req.user.codSector })
     .sort({ date: "desc" })
     .lean();
   res.render("rasks/all-rask", { preguntas });
