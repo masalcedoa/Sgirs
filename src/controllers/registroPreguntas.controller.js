@@ -144,6 +144,8 @@ raskCtrl.renderrAsk = async (req, res) => {
     const preguntas = await registro.find({ codSector: req.user.codSector })
     .sort({ date: "desc" })
     .lean();
+
+
   res.render("rasks/all-rask", { preguntas });
 }
 

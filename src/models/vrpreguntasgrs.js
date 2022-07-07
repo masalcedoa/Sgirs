@@ -5,6 +5,7 @@ const vrptaSchema = new Schema(
       idPregunta: {
         type: String,
         required: true,
+        unique : true
       },
       pregunta: {
         type: String,

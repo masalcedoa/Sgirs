@@ -149,9 +149,11 @@ usersCtrl.SigninValidRest = async (req, res) => {
   
   //console.log("Valid Result User:",cResult );
 
-  const uSession = cResult.correo;
   
-  module.exports = uSession;
+ 
+
+ // const uSession = cResult.correo;
+  
 
   
   if (!cResult) {
@@ -160,6 +162,8 @@ usersCtrl.SigninValidRest = async (req, res) => {
 
   } 
   else {
+
+    const uSession = cResult.correo;
     
     //actualiza periodo del usuario
     //console.log(req.params.id,Periodo);
