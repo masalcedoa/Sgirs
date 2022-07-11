@@ -1,4 +1,6 @@
 const indexCtrl = {};
+const imageCtrl = require("./image.controller");
+const homeCtrl = require("./home.controller");
 
 console.log('entre a controller');
 
@@ -10,7 +12,10 @@ indexCtrl.renderAbout = (req, res) => {
     res.render("about");
   };
   
-  module.exports = indexCtrl;
+  module.exports = indexCtrl,imageCtrl,homeCtrl ;
+  
+  //module.exports = imageCtrl;
+  //module.exports = homeCtrl;
 
 
 

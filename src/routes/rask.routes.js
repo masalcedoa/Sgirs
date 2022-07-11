@@ -2,7 +2,7 @@ const { Router } = require('express');
 const router = Router();
 
 //const { rederAskForm, createNewAsk, renderAsk, renderEditAskForm, updateFormAsk, deleteAsk, updateAsk } = require('../controllers/notes.controller');
-const { rederrAskForm,createNewrAsk,renderrAsk,renderEditrAskForm,updaterAsk, deleterAsk  } = require('../controllers/registroPreguntas.controller');
+const { create,rederrAskForm,createNewrAsk,renderrAsk,renderEditrAskForm,updaterAsk, deleterAsk  } = require('../controllers/registroPreguntas.controller');
 
 const { isAuthenticated } = require('../helpers/auth');
 
@@ -10,7 +10,9 @@ const { isAuthenticated } = require('../helpers/auth');
 console.log("Ruta con autenticacion");
 router.get('/rasks/add' ,isAuthenticated, rederrAskForm);
 
-router.post('/rasks/new-rask', isAuthenticated, createNewrAsk);
+//router.post('/rasks/new-rask', isAuthenticated, createNewrAsk);
+
+router.post('/rasks/new-rask', isAuthenticated, create);
 
 //Get all Notes
 router.get('/rasks', isAuthenticated, renderrAsk);
@@ -23,5 +25,12 @@ router.put('/rasks/edit-ask/:id',isAuthenticated,  updaterAsk);
 
 //delete notes
 router.delete('/rasks/delete/:id', deleterAsk);
+
+
+/*router.get("/images/:image_id", imageCtrl.Index);
+router.post("/images", imageCtrl.create);
+router.post("/images/:image_id/like", imageCtrl.like);
+router.post("/images/:image_id/comment", imageCtrl.comment);
+router.delete("/images/:image_id", imageCtrl.remove);*/
 
 module.exports = router;

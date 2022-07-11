@@ -1,52 +1,90 @@
-<div class="col-md-4 mx-auto">
+<div class="col-md-9 mx-auto">
   <div class="card text-center">
     <div class="card-header">
       <h3>Registro de Preguntas</h3>
     </div>
-    <div  class="card-body">
+    <div class="card-body">
 
-      <form action="/rasks/new-rask" method="POST">
-
-              {{#each lPreguntas}}
-
-          <div class="form-group" >
-            <select class="form-control" name="{{idPregunta}}"  id="{{idPregunta}}"  >
-     <option  disabled selected>{{pregunta}}</option>
-
-     {{#if respuesta1}}
-.     
-      <option value={{ respuesta1 }}>{{ respuesta1 }}</option>
-      {{/if}}
-
-           {{#if respuesta2}}
-      <option value={{ respuesta2 }}>{{ respuesta2 }}</option>
-            {{/if}}
+      <form action="/rasks/new-rask" method="POST" enctype="multipart/form-data">
 
 
-           {{#if respuesta3}}
-      <option value={{ respuesta3 }}>{{ respuesta3 }}</option>
+
+        <TABLE BORDER WIDTH="100%">
+          <TR>
+            <TH>Pregunta</TH>
+            <TH>Respuesta</TH>
+          </TR>
+
+          {{#each lPreguntas}}
+
+          <TR ALIGN=left>
+            <TD>{{pregunta}}</TD>
+
+            <TD>
+
+              <div class="form-group">
+
+                <select class="form-control" name="{{idPregunta}}" id="{{idPregunta}}" >
+                  <<option disabled selected>Escoger Opcion
+                    </option>
+
+                    {{#if respuesta1}}
+                    <option value={{ respuesta1 }}>{{ respuesta1 }}</option>
+                    {{/if}}
+
+                    {{#if respuesta2}}
+                    <option value={{ respuesta2 }}>{{ respuesta2 }}</option>
+                    {{/if}}
+
+                    {{#if respuesta3}}
+                    <option value={{ respuesta3 }}>{{ respuesta3 }}</option>
+                    {{/if}}
+
+                </select>
+
+                {{#if indTexto }}
+
+                <div class="form-group">
+                  <textarea name="{{idPregunta}}_T"  class="form-control" placeholder="Observacion" ></textarea>
+                </div>
+
+
+                {{/if}}
+
+                {{#if indArchivo}}
+
+                <div class="form-group">
+
+                  <input type="file" name="{{idPregunta}}_D"  id="{{idPregunta}}_D" value=""
+                            class="form-control text-dark border-success"
+                            
+                            >
+               </div>
+    
+
+
               {{/if}}
 
-
-
-            </select>
-          </div>
-
-              {{/each}}
-
-
-             
-
-
-
-
-
-        <div class="form-group">
-          <button class="btn btn-primary btn-block" type="submit">
-            Grabar
-          </button>
-        </div>
-      </form>
     </div>
+
+
+    </TD>
+
+    </TR>
+
+
+    {{/each}}
+
+
+    </TABLE>
+
+
+    <div class="form-group">
+      <button class="btn btn-primary btn-block" type="submit">
+        Grabar
+      </button>
+    </div>
+    </form>
   </div>
+</div>
 </div>
