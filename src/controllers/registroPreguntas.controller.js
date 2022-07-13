@@ -325,189 +325,189 @@ P00000026_P,
                 if (property == "P00000001_D") {
                   newRegistro.P00000001_D = { 
                     data: fs.readFileSync(path.join( './uploads/' + req.files['P00000001_D'][0].filename)),
-                    contentType: 'image/png'
+                    contentType: 'application/pdf'
                 } 
                 }
 
                 if (property == "P00000002_D") {
                   newRegistro.P00000002_D = { 
                     data: fs.readFileSync(path.join( './uploads/' + req.files['P00000002_D'][0].filename)),
-                    contentType: 'image/png'
+                    contentType: 'application/pdf'
                 } 
                 }
 
                 if (property == "P00000003_D") {
                   newRegistro.P00000003_D = { 
                     data: fs.readFileSync(path.join( './uploads/' + req.files['P00000003_D'][0].filename)),
-                    contentType: 'image/png'
+                    contentType: 'application/pdf'
                 } 
                 }
 
                 if (property == "P00000004_D") {
                   newRegistro.P00000004_D = { 
                     data: fs.readFileSync(path.join( './uploads/' + req.files['P00000004_D'][0].filename)),
-                    contentType: 'image/png'
+                    contentType: 'application/pdf'
                 } 
                 }
 
                 if (property == "P00000005_D") {
                   newRegistro.P00000005_D = { 
                     data: fs.readFileSync(path.join( './uploads/' + req.files['P00000005_D'][0].filename)),
-                    contentType: 'image/png'
+                    contentType: 'application/pdf'
                 } 
                 }
 
                 if (property == "P00000006_D") {
                   newRegistro.P00000006_D = { 
                     data: fs.readFileSync(path.join( './uploads/' + req.files['P00000006_D'][0].filename)),
-                    contentType: 'image/png'
+                    contentType: 'application/pdf'
                 } 
                 }
 
                 if (property == "P00000007_D") {
                   newRegistro.P00000007_D = { 
                     data: fs.readFileSync(path.join( './uploads/' + req.files['P00000007_D'][0].filename)),
-                    contentType: 'image/png'
+                    contentType: 'application/pdf'
                 } 
                 }
 
                 if (property == "P00000008_D") {
                   newRegistro.P00000008_D = { 
                     data: fs.readFileSync(path.join( './uploads/' + req.files['P00000007_D'][0].filename)),
-                    contentType: 'image/png'
+                    contentType: 'application/pdf'
                 } 
                 }
 
                 if (property == "P00000008_D") {
                   newRegistro.P00000008_D = { 
                     data: fs.readFileSync(path.join( './uploads/' + req.files['P00000008_D'][0].filename)),
-                    contentType: 'image/png'
+                    contentType: 'application/pdf'
                 } 
                 }
 
                 if (property == "P00000009_D") {
                   newRegistro.P00000009_D = { 
                     data: fs.readFileSync(path.join( './uploads/' + req.files['P00000009_D'][0].filename)),
-                    contentType: 'image/png'
+                    contentType: 'application/pdf'
                 } 
                 }
 
                 if (property == "P00000010_D") {
                   newRegistro.P00000010_D = { 
                     data: fs.readFileSync(path.join( './uploads/' + req.files['P00000010_D'][0].filename)),
-                    contentType: 'image/png'
+                    contentType: 'application/pdf'
                 } 
                 }
 
                 if (property == "P00000011_D") {
                   newRegistro.P00000011_D = { 
                     data: fs.readFileSync(path.join( './uploads/' + req.files['P00000011_D'][0].filename)),
-                    contentType: 'image/png'
+                    contentType: 'application/pdf'
                 } 
                 }
 
                 if (property == "P00000012_D") {
                   newRegistro.P00000012_D = { 
                     data: fs.readFileSync(path.join( './uploads/' + req.files['P00000012_D'][0].filename)),
-                    contentType: 'image/png'
+                    contentType: 'application/pdf'
                 } 
                 }
 
                 if (property == "P00000013_D") {
                   newRegistro.P00000013_D = { 
                     data: fs.readFileSync(path.join( './uploads/' + req.files['P00000013_D'][0].filename)),
-                    contentType: 'image/png'
+                    contentType: 'application/pdf'
                 } 
                 }
 
                 if (property == "P00000014_D") {
                   newRegistro.P00000014_D = { 
                     data: fs.readFileSync(path.join( './uploads/' + req.files['P00000014_D'][0].filename)),
-                    contentType: 'image/png'
+                    contentType: 'application/pdf'
                 } 
                 }
 
                 if (property == "P00000015_D") {
                   newRegistro.P00000015_D = { 
                     data: fs.readFileSync(path.join( './uploads/' + req.files['P00000015_D'][0].filename)),
-                    contentType: 'image/png'
+                    contentType: 'application/pdf'
                 } 
                 }
 
                 if (property == "P00000016_D") {
                   newRegistro.P00000016_D = { 
                     data: fs.readFileSync(path.join( './uploads/' + req.files['P00000016_D'][0].filename)),
-                    contentType: 'image/png'
+                    contentType: 'application/pdf'
                 } 
                 }
 
                 if (property == "P00000017_D") {
                   newRegistro.P00000017_D = { 
                     data: fs.readFileSync(path.join( './uploads/' + req.files['P00000017_D'][0].filename)),
-                    contentType: 'image/png'
+                    contentType: 'application/pdf'
                 } 
                 }
 
                 if (property == "P00000018_D") {
                   newRegistro.P00000018_D = { 
                     data: fs.readFileSync(path.join( './uploads/' + req.files['P00000018_D'][0].filename)),
-                    contentType: 'image/png'
+                    contentType: 'application/pdf'
                 } 
                 }
 
                 if (property == "P00000019_D") {
                   newRegistro.P00000019_D = { 
                     data: fs.readFileSync(path.join( './uploads/' + req.files['P00000019_D'][0].filename)),
-                    contentType: 'image/png'
+                    contentType: 'application/pdf'
                 } 
                 }
 
                 if (property == "P00000020_D") {
                   newRegistro.P00000020_D = { 
                     data: fs.readFileSync(path.join( './uploads/' + req.files['P00000020_D'][0].filename)),
-                    contentType: 'image/png'
+                    contentType: 'application/pdf'
                 } 
                 }
 
                 if (property == "P00000021_D") {
                   newRegistro.P00000021_D = { 
                     data: fs.readFileSync(path.join( './uploads/' + req.files['P00000021_D'][0].filename)),
-                    contentType: 'image/png'
+                    contentType: 'application/pdf'
                 } 
                 }
 
                 if (property == "P00000022_D") {
                   newRegistro.P00000022_D = { 
                     data: fs.readFileSync(path.join( './uploads/' + req.files['P00000022_D'][0].filename)),
-                    contentType: 'image/png'
+                    contentType: 'application/pdf'
                 } 
                 }
 
                 if (property == "P00000023_D") {
                   newRegistro.P00000023_D = { 
                     data: fs.readFileSync(path.join( './uploads/' + req.files['P00000023_D'][0].filename)),
-                    contentType: 'image/png'
+                    contentType: 'application/pdf'
                 } 
                 }
 
                 if (property == "P00000024_D") {
                   newRegistro.P00000024_D = { 
                     data: fs.readFileSync(path.join( './uploads/' + req.files['P00000024_D'][0].filename)),
-                    contentType: 'image/png'
+                    contentType: 'application/pdf'
                 } 
                 }
 
                 if (property == "P00000025_D") {
                   newRegistro.P00000025_D = { 
                     data: fs.readFileSync(path.join( './uploads/' + req.files['P00000025_D'][0].filename)),
-                    contentType: 'image/png'
+                    contentType: 'application/pdf'
                 } 
                 }
 
                 if (property == "P00000026_D") {
                   newRegistro.P00000026_D = { 
                     data: fs.readFileSync(path.join( './uploads/' + req.files['P00000026_D'][0].filename)),
-                    contentType: 'image/png'
+                    contentType: 'application/pdf'
                 } 
                 }
 
