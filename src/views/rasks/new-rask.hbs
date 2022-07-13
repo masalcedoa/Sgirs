@@ -5,6 +5,8 @@
     </div>
     <div class="card-body">
 
+
+
       <form action="/rasks/new-rask" method="POST" enctype="multipart/form-data">
 
 
@@ -17,14 +19,24 @@
 
           {{#each lPreguntas}}
 
+
+
+          
+          
+
           <TR ALIGN=left>
-            <TD>{{pregunta}}</TD>
+            <TD >
+              {{pregunta}}
+              <div style="visibility: hidden">
+               <input type="text" name="{{idPregunta}}_P" id="{{idPregunta}}_P" value="{{pregunta}}" class="form-control text-dark border-success" >
+               </div>
+            </TD>
 
             <TD>
 
               <div class="form-group">
 
-                <select class="form-control" name="{{idPregunta}}" id="{{idPregunta}}" >
+                <select class="form-control" name="{{idPregunta}}" id="{{idPregunta}}"  required>
                   <<option disabled selected>Escoger Opcion
                     </option>
 
@@ -45,7 +57,7 @@
                 {{#if indTexto }}
 
                 <div class="form-group">
-                  <textarea name="{{idPregunta}}_T"  class="form-control" placeholder="Observacion" ></textarea>
+                  <textarea name="{{idPregunta}}_T" class="form-control" placeholder="Observacion" required ></textarea>
                 </div>
 
 
@@ -55,36 +67,34 @@
 
                 <div class="form-group">
 
-                  <input type="file" name="{{idPregunta}}_D"  id="{{idPregunta}}_D" value=""
-                            class="form-control text-dark border-success"
-                            
-                            >
-               </div>
-    
+                    <input type="file" name="{{idPregunta}}_D" id="{{idPregunta}}_D" value="" class="form-control text-dark border-success" required>
+
+                </div>
 
 
-              {{/if}}
 
+                {{/if}}
+
+              </div>
+
+
+            </TD>
+
+          </TR>
+
+
+          {{/each}}
+
+
+        </TABLE>
+
+
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" type="submit">
+            Grabar
+          </button>
+        </div>
+      </form>
     </div>
-
-
-    </TD>
-
-    </TR>
-
-
-    {{/each}}
-
-
-    </TABLE>
-
-
-    <div class="form-group">
-      <button class="btn btn-primary btn-block" type="submit">
-        Grabar
-      </button>
-    </div>
-    </form>
   </div>
-</div>
 </div>

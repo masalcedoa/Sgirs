@@ -12,7 +12,7 @@ router.get('/rasks/add' ,isAuthenticated, rederrAskForm);
 
 //router.post('/rasks/new-rask', isAuthenticated, createNewrAsk);
 
-router.post('/rasks/new-rask', isAuthenticated, create);
+router.post('/rasks/new-rask', isAuthenticated, createNewrAsk);
 
 //Get all Notes
 router.get('/rasks', isAuthenticated, renderrAsk);

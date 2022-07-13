@@ -53,9 +53,27 @@ app.engine(
     partialsDir: path.join(app.get('views') ,'partials'),*/
 
   // Uploads Settings
-app.use(multer({ dest: "./uploads" }).single("image"));
-app.use(multer({ dest: './uploads' }).single('P00000001_D'));
-app.use(multer({ dest: './uploads' }).single('P00000002_D'));
+//app.use(multer({ dest: "./uploads" }).single("image"));
+//const upload = multer({ dest: 'uploads/' });
+//const cpUpload = upload.fields([{ name: 'P00000001_D', maxCount: 1 }, { name: 'P00000002_D', maxCount: 1 }]);
+
+//app.use(multer({ dest: "./uploads" }).fields([{ name: 'P00000001_D', maxCount: 1 }, { name: 'P00000002_D', maxCount: 1 }]));
+
+app.use(multer({ dest: "./uploads" }).fields([{ name: 'P00000001_D', maxCount: 1 }, { name: 'P00000002_D', maxCount: 1 },
+{ name: 'P00000003_D', maxCount: 1 },{ name: 'P00000004_D', maxCount: 1 },{ name: 'P00000005_D', maxCount: 1 },
+{ name: 'P00000006_D', maxCount: 1 },{ name: 'P00000007_D', maxCount: 1 },{ name: 'P00000008_D', maxCount: 1 },
+{ name: 'P00000009_D', maxCount: 1 },{ name: 'P00000010_D', maxCount: 1 },{ name: 'P00000011_D', maxCount: 1 },
+{ name: 'P00000012_D', maxCount: 1 },{ name: 'P00000013_D', maxCount: 1 },{ name: 'P00000014_D', maxCount: 1 },
+{ name: 'P00000015_D', maxCount: 1 },{ name: 'P00000016_D', maxCount: 1 },{ name: 'P00000017_D', maxCount: 1 },
+{ name: 'P00000018_D', maxCount: 1 },{ name: 'P00000018_D', maxCount: 1 },{ name: 'P00000019_D', maxCount: 1 },
+{ name: 'P00000020_D', maxCount: 1 },{ name: 'P00000021_D', maxCount: 1 },{ name: 'P00000022_D', maxCount: 1 },
+{ name: 'P00000023_D', maxCount: 1 },{ name: 'P00000024_D', maxCount: 1 },{ name: 'P00000025_D', maxCount: 1 },
+{ name: 'P00000026_D', maxCount: 1 }]));
+
+//app.use(multer({ dest: "./uploads" }).single("c"));
+//app.use(multer({ dest: "./uploads2" }).single("P00000002_D"));
+//app.use(multer({ dest: "./uploads" }).single("P00000002_D"));
+/*app.use(multer({ dest: './uploads' }).single('P00000002_D'));
 app.use(multer({ dest: './uploads' }).single('P00000003_D'));
 app.use(multer({ dest: './uploads' }).single('P00000004_D'));
 app.use(multer({ dest: './uploads' }).single('P00000005_D'));
@@ -75,12 +93,12 @@ app.use(multer({ dest: './uploads' }).single('P00000018_D'));
 app.use(multer({ dest: './uploads' }).single('P00000019_D'));
 app.use(multer({ dest: './uploads' }).single('P00000020_D'));
 app.use(multer({ dest: './uploads' }).single('P00000021_D'));
-app.use(multer({ dest: './uploads' }).single('P00000017_D'));
 app.use(multer({ dest: './uploads' }).single('P00000022_D'));
 app.use(multer({ dest: './uploads' }).single('P00000023_D'));
 app.use(multer({ dest: './uploads' }).single('P00000024_D'));
 app.use(multer({ dest: './uploads' }).single('P00000025_D'));
 app.use(multer({ dest: './uploads' }).single('P00000026_D'));
+*/
 
 
 
@@ -152,6 +170,20 @@ app.use(bodyParser.urlencoded(
 ))
 
 // Step 5 - set up multer for storing uploaded files
+
+/*var storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+      cb(null, 'uploads')
+  },
+  filename: (req, file, cb) => {
+      cb(null, file.fieldname + '-' + Date.now())
+  }
+});
+
+var upload = multer({ storage: storage });*/
+
  
+ 
+
 
 module.exports = app;

@@ -13,19 +13,19 @@ const raskCtrl = {};
 const sector  = require("../models/Sector");
 const { SigninValidRest } = require('../controllers/usuario.controller');
 
-const express = require('express')
-const app = express()
-
-
 const fs = require("fs-extra");
 const path = require( "path");
 const md5 = require("md5");
 const sidebar = require("../helpers/sidebar");
 const { randomNumber } = require("../helpers/libs");
 //const { Image, Comment } = require("../models/image");
-const fileupload = require("express-fileupload");
+//const fileupload = require("express-fileupload");
 
-app.use(fileupload());
+//const multer = require('multer');
+//const upload = multer({ dest: 'uploads/' });
+//const cpUpload = upload.fields([{ name: 'P00000001_D', maxCount: 1 }, { name: 'P00000002_D', maxCount: 1 }]);
+
+
 
 raskCtrl.rederrAskForm = async (req, res) => {
     //res.send('note add');
@@ -88,14 +88,22 @@ if (!req.files) {
 
       
 console.log("a crear registro :",req.body);
-console.log("req.files.file:",req.files.file);
-console.log("a crear registro f:",req.body.readFileSync);
+console.log("req.files.file:",req.files);
 
-const imgUrl = randomNumber;
 
-const imageTempPath = req.file.path;
-const ext = path.extname(req.file.originalname).toLowerCase();
-const targetPath = path.resolve(`./uploads/${imgUrl}${ext}`);
+
+//const imgUrl = randomNumber;
+
+//console.log(file.P00000001_D.path);
+
+//const imageTempPath = req.files['P00000001_D'][0].path;
+//console.log("imageTempPath:",imageTempPath);
+//const ext = path.extname(req.files['P00000001_D'][0].originalname).toLowerCase();
+//console.log("ext:",ext);
+
+//const targetPath = path.resolve(`./uploads/${imgUrl}${ext}`);
+
+//console.log("targetPath:",targetPath);
 
 
 
@@ -127,6 +135,32 @@ const targetPath = path.resolve(`./uploads/${imgUrl}${ext}`);
         P00000024,	P00000024_T,	P00000024_D,        
         P00000025,	P00000025_T,	P00000025_D,
         P00000026,	P00000026_T,	P00000026_D,
+        P00000001_P,
+        P00000002_P,
+        P00000003_P,
+        P00000004_P,
+        P00000005_P,
+        P00000006_P,
+        P00000007_P,
+        P00000008_P,
+        P00000009_P,
+        P00000010_P,
+        P00000011_P,
+        P00000012_P,
+        P00000013_P,
+        P00000014_P,
+        P00000015_P,
+        P00000016_P,
+        P00000017_P,
+        P00000018_P,
+        P00000019_P,
+        P00000020_P,
+        P00000021_P,
+        P00000022_P,
+        P00000023_P,
+        P00000024_P,
+        P00000025_P,
+        P00000026_P,
         CodSector } = req.body;
     //console.log("Permite Archivo",indArchivo);
     //console.log("Permite Texto",indTexto);*/
@@ -187,52 +221,303 @@ const targetPath = path.resolve(`./uploads/${imgUrl}${ext}`);
             P00000023,	P00000023_T,	P00000023_D,
             P00000024,	P00000024_T,	P00000024_D,        
             P00000025,	P00000025_T,	P00000025_D,
-            P00000026,	P00000026_T,	P00000026_D,  image,          CodSector
+            P00000026,	P00000026_T,	P00000026_D,  
+            P00000001_P,
+            P00000002_P,
+            P00000003_P,
+            P00000004_P,
+            P00000005_P,
+            P00000006_P,
+            P00000007_P,
+            P00000008_P,
+            P00000009_P,
+            P00000010_P,
+            P00000011_P,
+            P00000012_P,
+            P00000013_P,
+            P00000014_P,
+            P00000015_P,
+            P00000016_P,
+            P00000017_P,
+            P00000018_P,
+            P00000019_P,
+            P00000020_P,
+            P00000021_P,
+            P00000022_P,
+            P00000023_P,
+            P00000024_P,
+            P00000025_P,
+            P00000026_P,
+            
+            
+            CodSector
         });
     } else {
 
         
         // you wil need the public/temp path or this will throw an error
-        await fs.rename(imageTempPath, targetPath);
+       // await fs.rename(imageTempPath, targetPath);
+
+
+       
 
 
 
-        const newRegistro = new registro({P00000001,P00000001_T,P00000001_D,
-            P00000002,P00000002_T,P00000002_D,
-            P00000003,	P00000003_T,	P00000003_D: {
-                data: fs.readFileSync(path.join(__dirname + '/uploads/firmablanco.png' )),
-                contentType: 'image/png'
-            },
-            P00000004,	P00000004_T,	P00000004_D,
-            P00000005,	P00000005_T,	P00000005_D,
-            P00000006,	P00000006_T,	P00000006_D,
-            P00000007,	P00000007_T,	P00000007_D,
-            P00000008,	P00000008_T,	P00000008_D,
-            P00000009,	P00000009_T,	P00000009_D,
-            P00000010,	P00000010_T,	P00000010_D,
-             P00000011,	 P00000011_T,	 P00000011_D,
-            P00000012,	P00000012_T,	P00000012_D,
-            P00000013,	P00000013_T,	P00000013_D,
-            P00000014,	P00000014_T,	P00000014_D,
-            P00000015,	P00000015_T,	P00000015_D,
-            P00000016,	P00000016_T,	P00000016_D,
-            P00000017,	P00000017_T,	P00000017_D,
-            P00000018,	P00000018_T,	P00000018_D,
-            P00000019,	P00000019_T,	P00000019_D,
-            P00000020,	P00000020_T,	P00000020_D,
-            P00000021,	P00000021_T,	P00000021_D,
-            P00000017,	P00000017_T,	P00000017_D,
-            P00000022,	P00000022_T,	P00000022_D,
-            P00000023,	P00000023_T,	P00000023_D,
-            P00000024,	P00000024_T,	P00000024_D,        
-            P00000025,	P00000025_T,	P00000025_D,
-            P00000026,	P00000026_T,	P00000026_D,image,
+        const newRegistro = new registro({P00000001,P00000001_T,
+            P00000002,P00000002_T,
+            P00000003,	P00000003_T,	
+            P00000004,	P00000004_T,	
+            P00000005,	P00000005_T,	
+            P00000006,	P00000006_T,	
+            P00000007,	P00000007_T,	
+            P00000008,	P00000008_T,	
+            P00000009,	P00000009_T,	
+            P00000010,	P00000010_T,	
+             P00000011,	 P00000011_T,	
+            P00000012,	P00000012_T,	
+            P00000013,	P00000013_T,	
+            P00000014,	P00000014_T,	
+            P00000015,	P00000015_T,	
+            P00000016,	P00000016_T,	
+            P00000017,	P00000017_T,	
+            P00000018,	P00000018_T,	
+            P00000019,	P00000019_T,	
+            P00000020,	P00000020_T,	
+            P00000021,	P00000021_T,	
+            P00000022,	P00000022_T,	
+            P00000023,	P00000023_T,	
+            P00000024,	P00000024_T,	
+            P00000025,	P00000025_T,	
+            P00000026,	P00000026_T,	
+            P00000001_P,
+P00000002_P,
+P00000003_P,
+P00000004_P,
+P00000005_P,
+P00000006_P,
+P00000007_P,
+P00000008_P,
+P00000009_P,
+P00000010_P,
+P00000011_P,
+P00000012_P,
+P00000013_P,
+P00000014_P,
+P00000015_P,
+P00000016_P,
+P00000017_P,
+P00000018_P,
+P00000019_P,
+P00000020_P,
+P00000021_P,
+P00000022_P,
+P00000023_P,
+P00000024_P,
+P00000025_P,
+P00000026_P,
             CodSector});
 
             newRegistro.user = req.user.id;
             newRegistro.CodSector = req.user.codSector;
 
-        console.log("registro a gabrar",newRegistro);
+            for (const property in req.files) {
+              //console.log('arreglo',`${property}: ${req.files[property]}`);
+                if (property == "P00000001_D") {
+                  newRegistro.P00000001_D = { 
+                    data: fs.readFileSync(path.join( './uploads/' + req.files['P00000001_D'][0].filename)),
+                    contentType: 'image/png'
+                } 
+                }
+
+                if (property == "P00000002_D") {
+                  newRegistro.P00000002_D = { 
+                    data: fs.readFileSync(path.join( './uploads/' + req.files['P00000002_D'][0].filename)),
+                    contentType: 'image/png'
+                } 
+                }
+
+                if (property == "P00000003_D") {
+                  newRegistro.P00000003_D = { 
+                    data: fs.readFileSync(path.join( './uploads/' + req.files['P00000003_D'][0].filename)),
+                    contentType: 'image/png'
+                } 
+                }
+
+                if (property == "P00000004_D") {
+                  newRegistro.P00000004_D = { 
+                    data: fs.readFileSync(path.join( './uploads/' + req.files['P00000004_D'][0].filename)),
+                    contentType: 'image/png'
+                } 
+                }
+
+                if (property == "P00000005_D") {
+                  newRegistro.P00000005_D = { 
+                    data: fs.readFileSync(path.join( './uploads/' + req.files['P00000005_D'][0].filename)),
+                    contentType: 'image/png'
+                } 
+                }
+
+                if (property == "P00000006_D") {
+                  newRegistro.P00000006_D = { 
+                    data: fs.readFileSync(path.join( './uploads/' + req.files['P00000006_D'][0].filename)),
+                    contentType: 'image/png'
+                } 
+                }
+
+                if (property == "P00000007_D") {
+                  newRegistro.P00000007_D = { 
+                    data: fs.readFileSync(path.join( './uploads/' + req.files['P00000007_D'][0].filename)),
+                    contentType: 'image/png'
+                } 
+                }
+
+                if (property == "P00000008_D") {
+                  newRegistro.P00000008_D = { 
+                    data: fs.readFileSync(path.join( './uploads/' + req.files['P00000007_D'][0].filename)),
+                    contentType: 'image/png'
+                } 
+                }
+
+                if (property == "P00000008_D") {
+                  newRegistro.P00000008_D = { 
+                    data: fs.readFileSync(path.join( './uploads/' + req.files['P00000008_D'][0].filename)),
+                    contentType: 'image/png'
+                } 
+                }
+
+                if (property == "P00000009_D") {
+                  newRegistro.P00000009_D = { 
+                    data: fs.readFileSync(path.join( './uploads/' + req.files['P00000009_D'][0].filename)),
+                    contentType: 'image/png'
+                } 
+                }
+
+                if (property == "P00000010_D") {
+                  newRegistro.P00000010_D = { 
+                    data: fs.readFileSync(path.join( './uploads/' + req.files['P00000010_D'][0].filename)),
+                    contentType: 'image/png'
+                } 
+                }
+
+                if (property == "P00000011_D") {
+                  newRegistro.P00000011_D = { 
+                    data: fs.readFileSync(path.join( './uploads/' + req.files['P00000011_D'][0].filename)),
+                    contentType: 'image/png'
+                } 
+                }
+
+                if (property == "P00000012_D") {
+                  newRegistro.P00000012_D = { 
+                    data: fs.readFileSync(path.join( './uploads/' + req.files['P00000012_D'][0].filename)),
+                    contentType: 'image/png'
+                } 
+                }
+
+                if (property == "P00000013_D") {
+                  newRegistro.P00000013_D = { 
+                    data: fs.readFileSync(path.join( './uploads/' + req.files['P00000013_D'][0].filename)),
+                    contentType: 'image/png'
+                } 
+                }
+
+                if (property == "P00000014_D") {
+                  newRegistro.P00000014_D = { 
+                    data: fs.readFileSync(path.join( './uploads/' + req.files['P00000014_D'][0].filename)),
+                    contentType: 'image/png'
+                } 
+                }
+
+                if (property == "P00000015_D") {
+                  newRegistro.P00000015_D = { 
+                    data: fs.readFileSync(path.join( './uploads/' + req.files['P00000015_D'][0].filename)),
+                    contentType: 'image/png'
+                } 
+                }
+
+                if (property == "P00000016_D") {
+                  newRegistro.P00000016_D = { 
+                    data: fs.readFileSync(path.join( './uploads/' + req.files['P00000016_D'][0].filename)),
+                    contentType: 'image/png'
+                } 
+                }
+
+                if (property == "P00000017_D") {
+                  newRegistro.P00000017_D = { 
+                    data: fs.readFileSync(path.join( './uploads/' + req.files['P00000017_D'][0].filename)),
+                    contentType: 'image/png'
+                } 
+                }
+
+                if (property == "P00000018_D") {
+                  newRegistro.P00000018_D = { 
+                    data: fs.readFileSync(path.join( './uploads/' + req.files['P00000018_D'][0].filename)),
+                    contentType: 'image/png'
+                } 
+                }
+
+                if (property == "P00000019_D") {
+                  newRegistro.P00000019_D = { 
+                    data: fs.readFileSync(path.join( './uploads/' + req.files['P00000019_D'][0].filename)),
+                    contentType: 'image/png'
+                } 
+                }
+
+                if (property == "P00000020_D") {
+                  newRegistro.P00000020_D = { 
+                    data: fs.readFileSync(path.join( './uploads/' + req.files['P00000020_D'][0].filename)),
+                    contentType: 'image/png'
+                } 
+                }
+
+                if (property == "P00000021_D") {
+                  newRegistro.P00000021_D = { 
+                    data: fs.readFileSync(path.join( './uploads/' + req.files['P00000021_D'][0].filename)),
+                    contentType: 'image/png'
+                } 
+                }
+
+                if (property == "P00000022_D") {
+                  newRegistro.P00000022_D = { 
+                    data: fs.readFileSync(path.join( './uploads/' + req.files['P00000022_D'][0].filename)),
+                    contentType: 'image/png'
+                } 
+                }
+
+                if (property == "P00000023_D") {
+                  newRegistro.P00000023_D = { 
+                    data: fs.readFileSync(path.join( './uploads/' + req.files['P00000023_D'][0].filename)),
+                    contentType: 'image/png'
+                } 
+                }
+
+                if (property == "P00000024_D") {
+                  newRegistro.P00000024_D = { 
+                    data: fs.readFileSync(path.join( './uploads/' + req.files['P00000024_D'][0].filename)),
+                    contentType: 'image/png'
+                } 
+                }
+
+                if (property == "P00000025_D") {
+                  newRegistro.P00000025_D = { 
+                    data: fs.readFileSync(path.join( './uploads/' + req.files['P00000025_D'][0].filename)),
+                    contentType: 'image/png'
+                } 
+                }
+
+                if (property == "P00000026_D") {
+                  newRegistro.P00000026_D = { 
+                    data: fs.readFileSync(path.join( './uploads/' + req.files['P00000026_D'][0].filename)),
+                    contentType: 'image/png'
+                } 
+                }
+
+
+
+
+            }
+      
+
+        //console.log("registro a gabrar",newRegistro);
         
 
 
@@ -249,7 +534,7 @@ raskCtrl.renderrAsk = async (req, res) => {
     //res.send('Render rAsks');
     //const preguntas = await rAsk.find({ user: req.user.id })
     const preguntas = await registro.find({ codSector: req.user.codSector })
-    .sort({ date: "desc" })
+    .sort({ createdAt: "desc" })
     .lean();
 
 

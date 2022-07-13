@@ -1,38 +1,37 @@
 <div class="row">
   {{#each preguntas}}
-  <div class="col-md-3">
+  <div class="col-md-10">
     <div class="card">
       <div class="card-body">
         <h4 class="card-title d-flex justify-content-between align-items-center">
           {{ idPregunta }} <a href="/asks/edit/{{_id}}"><i class="fas fa-edit"></i></a>
         </h4>
         <p>Fecha Creacion : {{ createdAt }} </p>
-        <p>pregunta1 : {{ P00000001 }} </p>
-        <p>pregunta2 : {{ P00000002 }} </p>
-        <p>pregunta3 : {{ P00000003 }} </p>
-        <p>pregunta4 : {{ P00000004}} </p>
-        <p>pregunta5 : {{ P00000005}} </p>
-        <p>pregunta6 : {{ P00000006}} </p>
-        <p>pregunta7 : {{ P00000007 }} </p>
-        <p>pregunta8 : {{ P00000008 }} </p>
-        <p>pregunta9 : {{ P00000009 }} </p>
-        <p>pregunta10 : {{ P00000010 }} </p>
-        <p>pregunta11 : {{ P00000011 }} </p>
-        <p>pregunta12 : {{ P00000012 }} </p>
-        <p>pregunta13 : {{ P00000013 }} </p>
-        <p>pregunta14 : {{ P00000014 }} </p>
-        <p>pregunta15 : {{ P00000015 }} </p>
-        <p>pregunta16 : {{ P00000016 }} </p>
-        <p>pregunta17 : {{ P00000017 }} </p>
-        <p>pregunta18 : {{ P00000018 }} </p>
-        <p>pregunta19 : {{ P00000019 }} </p>
-        <p>pregunta20 : {{ P00000020 }} </p>
-        <p>pregunta21 : {{ P00000021 }} </p>
-        <p>pregunta22 : {{ P00000022 }} </p>
-        <p>pregunta23 : {{ P00000023 }} </p>
-        <p>pregunta24 : {{ P00000024 }} </p>
-        <p>pregunta25 : {{ P00000025 }} </p>
-        <p>pregunta26 : {{ P00000026 }} </p>
+<p>{{P00000001_P}} : {{P00000001}} </p>
+<p>{{P00000002_P}} : {{P00000002}} </p>
+<p>{{P00000003_P}} : {{P00000003}} </p>
+<p>{{P00000004_P}} : {{P00000004}} </p>
+<p>{{P00000005_P}} : {{P00000005}} </p>
+<p>{{P00000006_P}} : {{P00000006}} </p>
+<p>{{P00000007_P}} : {{P00000007}} </p>
+<p>{{P00000008_P}} : {{P00000008}} </p>
+<p>{{P00000009_P}} : {{P00000009}} </p>
+<p>{{P00000010_P}} : {{P00000010}} </p>
+<p>{{P00000012_P}} : {{P00000012}} </p>
+<p>{{P00000013_P}} : {{P00000013}} </p>
+<p>{{P00000014_P}} : {{P00000014}} </p>
+<p>{{P00000015_P}} : {{P00000015}} </p>
+<p>{{P00000016_P}} : {{P00000016}} </p>
+<p>{{P00000017_P}} : {{P00000017}} </p>
+<p>{{P00000018_P}} : {{P00000018}} </p>
+<p>{{P00000019_P}} : {{P00000019}} </p>
+<p>{{P00000020_P}} : {{P00000020}} </p>
+<p>{{P00000021_P}} : {{P00000021}} </p>
+<p>{{P00000022_P}} : {{P00000022}} </p>
+<p>{{P00000023_P}} : {{P00000023}} </p>
+<p>{{P00000024_P}} : {{P00000024}} </p>
+<p>{{P00000025_P}} : {{P00000025}} </p>
+<p>{{P00000026_P}} : {{P00000026}} </p>
 
         <form action="/asks/delete/{{_id}}?_method=DELETE" method="POST">
           <input type="hidden" name="_method" value="DELETE">
