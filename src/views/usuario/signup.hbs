@@ -5,7 +5,7 @@
         Registro Cuenta
       </div>
       <div class="card-body">
-        <form action="/usuario/signup" method="POST">
+        <form action="/usuario/signup" method="POST" enctype="multipart/form-data">
           <div class="form-group">
             <input type="text" class="form-control" name="responsable" placeholder="Responsable"
               value="{{responsable}}">
@@ -15,7 +15,7 @@
           </div>
 
           <div class="form-group">
-            <input type="text" class="form-control" name="documento_sgirs" placeholder="Documento_sgirs" value="">
+            <input type="file" name="documento_sgirs" id="documento_sgirs" value="" class="form-control text-dark border-success" required>
           </div>
 
 

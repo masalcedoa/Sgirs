@@ -8,92 +8,320 @@
         </h4>
 
         <div class="form-group">
-<p>Fecha Creacion : {{ createdAt }} 
-  </p>
+          <p>Fecha Creacion : {{ createdAt }}
+          </p>
         </div>
         <TABLE BORDER WIDTH="100%">
-                  <TR>
+          <TR>
             <TH>Pregunta</TH>
             <TH>Respuesta</TH>
             <TH>Observacion</TH>
+            <TH>Adjunto</TH>
           </TR>
-             <TR ALIGN=left>
-"<TR><TD>{{P00000008_P}} </TD>
+          <TR ALIGN=left>
+<TR><TD>{{P00000001_P}} </TD>
+<TD> {{P00000001}} </TD>
+<TD> {{P00000001_T}} </TD>
+<TD>
+{{#if  P00000001_D}}
+<form action='/rasks/download/' method='POST'>
+        <input type='hidden' name='filename' value='{{P00000001_D}}'>
+          <button type='submit' class='btn btn-success btn-block btn-sm'>Download</button>
+        </form>
+{{/if}}
+</TD>
+</TR>
+<TR><TD>{{P00000002_P}} </TD>
+<TD> {{P00000002}} </TD>
+<TD> {{P00000002_T}} </TD>
+<TD>
+{{#if  P00000002_D}}
+<form action='/rasks/download/' method='POST'>
+        <input type='hidden' name='filename' value='{{P00000002_D}}'>
+          <button type='submit' class='btn btn-success btn-block btn-sm'>Download</button>
+        </form>
+{{/if}}
+</TD>
+</TR>
+<TR><TD>{{P00000003_P}} </TD>
+<TD> {{P00000003}} </TD>
+<TD> {{P00000003_T}} </TD>
+<TD>
+{{#if  P00000003_D}}
+<form action='/rasks/download/' method='POST'>
+        <input type='hidden' name='filename' value='{{P00000003_D}}'>
+          <button type='submit' class='btn btn-success btn-block btn-sm'>Download</button>
+        </form>
+{{/if}}
+</TD>
+</TR>
+<TR><TD>{{P00000004_P}} </TD>
+<TD> {{P00000004}} </TD>
+<TD> {{P00000004_T}} </TD>
+<TD>
+{{#if  P00000004_D}}
+<form action='/rasks/download/' method='POST'>
+        <input type='hidden' name='filename' value='{{P00000004_D}}'>
+          <button type='submit' class='btn btn-success btn-block btn-sm'>Download</button>
+        </form>
+{{/if}}
+</TD>
+</TR>
+<TR><TD>{{P00000005_P}} </TD>
+<TD> {{P00000005}} </TD>
+<TD> {{P00000005_T}} </TD>
+<TD>
+{{#if  P00000005_D}}
+<form action='/rasks/download/' method='POST'>
+        <input type='hidden' name='filename' value='{{P00000005_D}}'>
+          <button type='submit' class='btn btn-success btn-block btn-sm'>Download</button>
+        </form>
+{{/if}}
+</TD>
+</TR>
+<TR><TD>{{P00000006_P}} </TD>
+<TD> {{P00000006}} </TD>
+<TD> {{P00000006_T}} </TD>
+<TD>
+{{#if  P00000006_D}}
+<form action='/rasks/download/' method='POST'>
+        <input type='hidden' name='filename' value='{{P00000006_D}}'>
+          <button type='submit' class='btn btn-success btn-block btn-sm'>Download</button>
+        </form>
+{{/if}}
+</TD>
+</TR>
+<TR><TD>{{P00000007_P}} </TD>
+<TD> {{P00000007}} </TD>
+<TD> {{P00000007_T}} </TD>
+<TD>
+{{#if  P00000007_D}}
+<form action='/rasks/download/' method='POST'>
+        <input type='hidden' name='filename' value='{{P00000007_D}}'>
+          <button type='submit' class='btn btn-success btn-block btn-sm'>Download</button>
+        </form>
+{{/if}}
+</TD>
+</TR>
+<TR><TD>{{P00000008_P}} </TD>
 <TD> {{P00000008}} </TD>
 <TD> {{P00000008_T}} </TD>
-</TR>"
-"<TR><TD>{{P00000009_P}} </TD>
+<TD>
+{{#if  P00000008_D}}
+<form action='/rasks/download/' method='POST'>
+        <input type='hidden' name='filename' value='{{P00000008_D}}'>
+          <button type='submit' class='btn btn-success btn-block btn-sm'>Download</button>
+        </form>
+{{/if}}
+</TD>
+</TR>
+<TR><TD>{{P00000009_P}} </TD>
 <TD> {{P00000009}} </TD>
 <TD> {{P00000009_T}} </TD>
-</TR>"
-"<TR><TD>{{P00000010_P}} </TD>
+<TD>
+{{#if  P00000009_D}}
+<form action='/rasks/download/' method='POST'>
+        <input type='hidden' name='filename' value='{{P00000009_D}}'>
+          <button type='submit' class='btn btn-success btn-block btn-sm'>Download</button>
+        </form>
+{{/if}}
+</TD>
+</TR>
+<TR><TD>{{P00000010_P}} </TD>
 <TD> {{P00000010}} </TD>
 <TD> {{P00000010_T}} </TD>
-</TR>"
-"<TR><TD>{{P00000012_P}} </TD>
+<TD>
+{{#if  P00000010_D}}
+<form action='/rasks/download/' method='POST'>
+        <input type='hidden' name='filename' value='{{P00000010_D}}'>
+          <button type='submit' class='btn btn-success btn-block btn-sm'>Download</button>
+        </form>
+{{/if}}
+</TD>
+</TR>
+<TR><TD>{{P00000012_P}} </TD>
 <TD> {{P00000012}} </TD>
 <TD> {{P00000012_T}} </TD>
-</TR>"
-"<TR><TD>{{P00000013_P}} </TD>
+<TD>
+{{#if  P00000012_D}}
+<form action='/rasks/download/' method='POST'>
+        <input type='hidden' name='filename' value='{{P00000012_D}}'>
+          <button type='submit' class='btn btn-success btn-block btn-sm'>Download</button>
+        </form>
+{{/if}}
+</TD>
+</TR>
+<TR><TD>{{P00000013_P}} </TD>
 <TD> {{P00000013}} </TD>
 <TD> {{P00000013_T}} </TD>
-</TR>"
-"<TR><TD>{{P00000014_P}} </TD>
+<TD>
+{{#if  P00000013_D}}
+<form action='/rasks/download/' method='POST'>
+        <input type='hidden' name='filename' value='{{P00000013_D}}'>
+          <button type='submit' class='btn btn-success btn-block btn-sm'>Download</button>
+        </form>
+{{/if}}
+</TD>
+</TR>
+<TR><TD>{{P00000014_P}} </TD>
 <TD> {{P00000014}} </TD>
 <TD> {{P00000014_T}} </TD>
-</TR>"
-"<TR><TD>{{P00000015_P}} </TD>
+<TD>
+{{#if  P00000014_D}}
+<form action='/rasks/download/' method='POST'>
+        <input type='hidden' name='filename' value='{{P00000014_D}}'>
+          <button type='submit' class='btn btn-success btn-block btn-sm'>Download</button>
+        </form>
+{{/if}}
+</TD>
+</TR>
+<TR><TD>{{P00000015_P}} </TD>
 <TD> {{P00000015}} </TD>
 <TD> {{P00000015_T}} </TD>
-</TR>"
-"<TR><TD>{{P00000016_P}} </TD>
+<TD>
+{{#if  P00000015_D}}
+<form action='/rasks/download/' method='POST'>
+        <input type='hidden' name='filename' value='{{P00000015_D}}'>
+          <button type='submit' class='btn btn-success btn-block btn-sm'>Download</button>
+        </form>
+{{/if}}
+</TD>
+</TR>
+<TR><TD>{{P00000016_P}} </TD>
 <TD> {{P00000016}} </TD>
 <TD> {{P00000016_T}} </TD>
-</TR>"
-"<TR><TD>{{P00000017_P}} </TD>
+<TD>
+{{#if  P00000016_D}}
+<form action='/rasks/download/' method='POST'>
+        <input type='hidden' name='filename' value='{{P00000016_D}}'>
+          <button type='submit' class='btn btn-success btn-block btn-sm'>Download</button>
+        </form>
+{{/if}}
+</TD>
+</TR>
+<TR><TD>{{P00000017_P}} </TD>
 <TD> {{P00000017}} </TD>
 <TD> {{P00000017_T}} </TD>
-</TR>"
-"<TR><TD>{{P00000018_P}} </TD>
+<TD>
+{{#if  P00000017_D}}
+<form action='/rasks/download/' method='POST'>
+        <input type='hidden' name='filename' value='{{P00000017_D}}'>
+          <button type='submit' class='btn btn-success btn-block btn-sm'>Download</button>
+        </form>
+{{/if}}
+</TD>
+</TR>
+<TR><TD>{{P00000018_P}} </TD>
 <TD> {{P00000018}} </TD>
 <TD> {{P00000018_T}} </TD>
-</TR>"
-"<TR><TD>{{P00000019_P}} </TD>
+<TD>
+{{#if  P00000018_D}}
+<form action='/rasks/download/' method='POST'>
+        <input type='hidden' name='filename' value='{{P00000018_D}}'>
+          <button type='submit' class='btn btn-success btn-block btn-sm'>Download</button>
+        </form>
+{{/if}}
+</TD>
+</TR>
+<TR><TD>{{P00000019_P}} </TD>
 <TD> {{P00000019}} </TD>
 <TD> {{P00000019_T}} </TD>
-</TR>"
-"<TR><TD>{{P00000020_P}} </TD>
+<TD>
+{{#if  P00000019_D}}
+<form action='/rasks/download/' method='POST'>
+        <input type='hidden' name='filename' value='{{P00000019_D}}'>
+          <button type='submit' class='btn btn-success btn-block btn-sm'>Download</button>
+        </form>
+{{/if}}
+</TD>
+</TR>
+<TR><TD>{{P00000020_P}} </TD>
 <TD> {{P00000020}} </TD>
 <TD> {{P00000020_T}} </TD>
-</TR>"
-"<TR><TD>{{P00000021_P}} </TD>
+<TD>
+{{#if  P00000020_D}}
+<form action='/rasks/download/' method='POST'>
+        <input type='hidden' name='filename' value='{{P00000020_D}}'>
+          <button type='submit' class='btn btn-success btn-block btn-sm'>Download</button>
+        </form>
+{{/if}}
+</TD>
+</TR>
+<TR><TD>{{P00000021_P}} </TD>
 <TD> {{P00000021}} </TD>
 <TD> {{P00000021_T}} </TD>
-</TR>"
-"<TR><TD>{{P00000022_P}} </TD>
+<TD>
+{{#if  P00000021_D}}
+<form action='/rasks/download/' method='POST'>
+        <input type='hidden' name='filename' value='{{P00000021_D}}'>
+          <button type='submit' class='btn btn-success btn-block btn-sm'>Download</button>
+        </form>
+{{/if}}
+</TD>
+</TR>
+<TR><TD>{{P00000022_P}} </TD>
 <TD> {{P00000022}} </TD>
 <TD> {{P00000022_T}} </TD>
-</TR>"
-"<TR><TD>{{P00000023_P}} </TD>
+<TD>
+{{#if  P00000022_D}}
+<form action='/rasks/download/' method='POST'>
+        <input type='hidden' name='filename' value='{{P00000022_D}}'>
+          <button type='submit' class='btn btn-success btn-block btn-sm'>Download</button>
+        </form>
+{{/if}}
+</TD>
+</TR>
+<TR><TD>{{P00000023_P}} </TD>
 <TD> {{P00000023}} </TD>
 <TD> {{P00000023_T}} </TD>
-</TR>"
-"<TR><TD>{{P00000024_P}} </TD>
+<TD>
+{{#if  P00000023_D}}
+<form action='/rasks/download/' method='POST'>
+        <input type='hidden' name='filename' value='{{P00000023_D}}'>
+          <button type='submit' class='btn btn-success btn-block btn-sm'>Download</button>
+        </form>
+{{/if}}
+</TD>
+</TR>
+<TR><TD>{{P00000024_P}} </TD>
 <TD> {{P00000024}} </TD>
 <TD> {{P00000024_T}} </TD>
-</TR>"
-"<TR><TD>{{P00000025_P}} </TD>
+<TD>
+{{#if  P00000024_D}}
+<form action='/rasks/download/' method='POST'>
+        <input type='hidden' name='filename' value='{{P00000024_D}}'>
+          <button type='submit' class='btn btn-success btn-block btn-sm'>Download</button>
+        </form>
+{{/if}}
+</TD>
+</TR>
+<TR><TD>{{P00000025_P}} </TD>
 <TD> {{P00000025}} </TD>
 <TD> {{P00000025_T}} </TD>
-</TR>"
-"<TR><TD>{{P00000026_P}} </TD>
+<TD>
+{{#if  P00000025_D}}
+<form action='/rasks/download/' method='POST'>
+        <input type='hidden' name='filename' value='{{P00000025_D}}'>
+          <button type='submit' class='btn btn-success btn-block btn-sm'>Download</button>
+        </form>
+{{/if}}
+</TD>
+</TR>
+<TR><TD>{{P00000026_P}} </TD>
 <TD> {{P00000026}} </TD>
 <TD> {{P00000026_T}} </TD>
-</TR>"
+<TD>
+{{#if  P00000026_D}}
+<form action='/rasks/download/' method='POST'>
+        <input type='hidden' name='filename' value='{{P00000026_D}}'>
+          <button type='submit' class='btn btn-success btn-block btn-sm'>Download</button>
+        </form>
+{{/if}}
+</TD>
 </TR>
 
 
-      </TABLE>
+        </TABLE>
 
 
         <form action="/asks/delete/{{_id}}?_method=DELETE" method="POST">

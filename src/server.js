@@ -68,7 +68,7 @@ app.use(multer({ dest: "./uploads" }).fields([{ name: 'P00000001_D', maxCount: 1
 { name: 'P00000018_D', maxCount: 1 },{ name: 'P00000018_D', maxCount: 1 },{ name: 'P00000019_D', maxCount: 1 },
 { name: 'P00000020_D', maxCount: 1 },{ name: 'P00000021_D', maxCount: 1 },{ name: 'P00000022_D', maxCount: 1 },
 { name: 'P00000023_D', maxCount: 1 },{ name: 'P00000024_D', maxCount: 1 },{ name: 'P00000025_D', maxCount: 1 },
-{ name: 'P00000026_D', maxCount: 1 }]));
+{ name: 'P00000026_D', maxCount: 1 }, { name: 'documento_sgirs', maxCount: 1 }]));
 
 //app.use(multer({ dest: "./uploads" }).single("c"));
 //app.use(multer({ dest: "./uploads2" }).single("P00000002_D"));

@@ -10,6 +10,11 @@ const sector  = require("../models/Sector");
 const Periodo  = require("../models/Periodo");
 const { redirect } = require("express/lib/response");
 
+const fs = require("fs-extra");
+const path = require( "path");
+const md5 = require("md5");
+const sidebar = require("../helpers/sidebar");
+const { randomNumber } = require("../helpers/libs");
 
 
 
@@ -29,17 +34,26 @@ usersCtrl.singup = async (req, res) => {
   let errors = [];
 
   
-  const { responsable, direccion, contacto, correo, password, confirm_password, codSector } = req.body;
+  const { documento_sgirs,responsable, direccion, contacto, correo, password, confirm_password, codSector } = req.body;
 
  
 
   console.log(req.body);
+  console.log(req.files);
   if (password != confirm_password) {
     errors.push({ text: "Passwords do not match." });
   }
   if (password.length < 4) {
     errors.push({ text: "Passwords must be at least 4 characters." });
   }
+
+  
+if (!req.files) {
+  errors.push({ text: "Falta documento" });
+}
+
+
+
   if (errors.length > 0) {
     res.render("usuario/signup", {
       errors,
@@ -49,7 +63,8 @@ usersCtrl.singup = async (req, res) => {
       correo,
       password,
       confirm_password,
-      codSector
+      codSector,
+      documento_sgirs
     });
   } else {
     // Look for email coincidence
@@ -83,6 +98,16 @@ usersCtrl.singup = async (req, res) => {
       
       const newUser = new User({ responsable, direccion, contacto,codSector, correo, password });
       newUser.password = await newUser.encryptPassword(password);
+
+      for (const property in req.files) {
+
+
+        if (property == "documento_sgirs") {
+          newUser.documento_sgirs =  req.files['documento_sgirs'][0].filename;
+        }
+      }  
+
+
       await newUser.save();
       req.flash("success_msg", "You are registered.");
       res.redirect("/usuario/signin");

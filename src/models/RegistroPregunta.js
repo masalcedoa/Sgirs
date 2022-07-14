@@ -267,133 +267,134 @@ const rAskSchema = new Schema(
       },	  
 	  
 	        P00000001_D: {
-            data: Buffer,
-            contentType: String,
-            required: false
+        type: String,
+        required: false,
+        unique : false
       },
       P00000002_D: {
-        data: Buffer,
-        contentType: String,
+        type: String,
         required: false,
+        unique : false
       },
       P00000003_D: {
-        data: Buffer,
-        contentType: String,
-        required: false
+        type: String,
+        required: false,
+        unique : false
       },
       P00000004_D: {
-        data: Buffer,
-        contentType: String,
-        required: false
+        type: String,
+        required: false,
+        unique : false
       },
       P00000005_D: {
-        data: Buffer,
-        contentType: String,
-        required: false
+        type: String,
+        required: false,
+        unique : false
       },
       P00000006_D: {
-        data: Buffer,
-        contentType: String,
-        required: false
+        type: String,
+        required: false,
+        unique : false
       },
       P00000007_D: {
-        data: Buffer,
-        contentType: String,
-        required: false
+        type: String,
+        required: false,
+        unique : false
       },
       P00000008_D: {
-        data: Buffer,
-        contentType: String,
-        required: false
+        type: String,
+        required: false,
+        unique : false
       },
       P00000009_D: {
-        data: Buffer,
-        contentType: String,
-        required: false
+        type: String,
+        required: false,
+        unique : false
       },
       P00000010_D: {
-        data: Buffer,
-        contentType: String,
-        required: false
+        type: String,
+        required: false,
+        unique : false
       },
       P00000011_D: {
-        data: Buffer,
-        contentType: String,
-        required: false
+        type: String,
+        required: false,
+        unique : false
       },
       P00000012_D: {
-        data: Buffer,
-        contentType: String
+        type: String,
+        required: false,
+        unique : false
       },
       P00000013_D: {
-        data: Buffer,
-        contentType: String,
-        required: false
+        type: String,
+        required: false,
+        unique : false
       },
       P00000014_D: {
-        data: Buffer,
-        contentType: String,
-        required: false
+        type: String,
+        required: false,
+        unique : false
       },
        P00000015_D: {
-        data: Buffer,
-        contentType: String,
-        required: false
+        type: String,
+        required: false,
+        unique : false
       },
       P00000016_D: {
-        data: Buffer,
-        contentType: String,
-        required: false
+        type: String,
+        required: false,
+        unique : false
       },
       P00000017_D: {
-        data: Buffer,
-        contentType: String,
-        required: false
+        type: String,
+        required: false,
+        unique : false
       },
       P00000018_D: {
-        data: Buffer,
-        contentType: String,
-        required: false
+        type: String,
+        required: false,
+        unique : false
       },
       P00000019_D: {
-        data: Buffer,
-        contentType: String,
-        required: false
+        type: String,
+        required: false,
+        unique : false
       },
       P00000020_D: {
-        data: Buffer,
-        contentType: String,
-        required: false
+        type: String,
+        required: false,
+        unique : false
       },
       P00000021_D: {
-        data: Buffer,
-        contentType: String,
-        required: false
+        type: String,
+        required: false,
+        unique : false
       },
       P00000022_D: {
-        data: Buffer,
-        contentType: String,
-        required: false
+        type: String,
+        required: false,
+        unique : false
       },
       P00000023_D: {
-        data: Buffer,
-        contentType: String,
-        required: false
+        type: String,
+        required: false,
+        unique : false
       },
       P00000024_D: {
-        data: Buffer,
-        contentType: String,
-        required: false
+        type: String,
+        required: false,
+        unique : false
       },
       P00000025_D: {
-        data: Buffer,
-        contentType: String,
-        required: false
+        type: String,
+        required: false,
+        unique : false
       },
       P00000026_D: {
-        data: Buffer,
-        contentType: String,
-        required: false
+        type: String,
+        required: false,
+        unique : false
       },
 
       P00000001_P: {
@@ -527,8 +528,7 @@ const rAskSchema = new Schema(
         unique : false
       },
 
-
-	  
+  
       CodSector: {
         type: String,
         required: true,
