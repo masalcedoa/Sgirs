@@ -21,43 +21,139 @@
 
 
 
-          
-          
+
+
 
           <TR ALIGN=left>
-            <TD >
+            <TD>
               {{pregunta}}
               <div style="visibility: hidden">
-               <input type="text" name="{{idPregunta}}_P" id="{{idPregunta}}_P" value="{{pregunta}}" class="form-control text-dark border-success" >
-               </div>
+                <input type="text" name="{{idPregunta}}_P" id="{{idPregunta}}_P" value="{{pregunta}}"
+                  class="form-control text-dark border-success">
+              </div>
             </TD>
 
             <TD>
 
               <div class="form-group">
 
-                <select class="form-control" name="{{idPregunta}}" id="{{idPregunta}}"  required>
-                  <<option disabled selected>Escoger Opcion
-                    </option>
+                <select class="form-control" name="{{idPregunta}}" id="{{idPregunta}}" required>
+                  <option disabled selected>Escoger rpta
+                  </option>
 
-                    {{#if respuesta1}}
-                    <option value={{ respuesta1 }}>{{ respuesta1 }}</option>
-                    {{/if}}
+                  {{#if respuesta1}}
+                  <option value={{ respuesta1 }}>{{ respuesta1 }}</option>
+                  {{/if}}
 
-                    {{#if respuesta2}}
-                    <option value={{ respuesta2 }}>{{ respuesta2 }}</option>
-                    {{/if}}
+                  {{#if respuesta2}}
+                  <option value={{ respuesta2 }}>{{ respuesta2 }}</option>
+                  {{/if}}
 
-                    {{#if respuesta3}}
-                    <option value={{ respuesta3 }}>{{ respuesta3 }}</option>
-                    {{/if}}
+                  {{#if respuesta3}}
+                  <option value={{ respuesta3 }}>{{ respuesta3 }}</option>
+                  {{/if}}
 
                 </select>
+
+                {{#if indOpcion}}
+
+                <select class="form-control" name="{{idPregunta}}_O" id="{{idPregunta}}_O" >
+                  <option disabled selected>Escoger opcion
+                  </option>
+
+                  {{#if opcion1}}
+                  <option value={{ opcion1 }}>{{ opcion1 }}</option>
+                  {{/if}}
+                  {{#if opcion2}}
+                  <option value={{ opcion2 }}>{{ opcion2 }}</option>
+                  {{/if}}
+                  {{#if opcion3}}
+                  <option value={{ opcion3 }}>{{ opcion3 }}</option>
+                  {{/if}}
+                  {{#if opcion4}}
+                  <option value={{ opcion4 }}>{{ opcion4 }}</option>
+                  {{/if}}
+                  {{#if opcion5}}
+                  <option value={{ opcion5 }}>{{ opcion5 }}</option>
+                  {{/if}}
+                  {{#if opcion6}}
+                  <option value={{ opcion6 }}>{{ opcion6 }}</option>
+                  {{/if}}
+                  {{#if opcion7}}
+                  <option value={{ opcion7 }}>{{ opcion7 }}</option>
+                  {{/if}}
+                  {{#if opcion8}}
+                  <option value={{ opcion8 }}>{{ opcion8 }}</option>
+                  {{/if}}
+                  {{#if opcion9}}
+                  <option value={{ opcion9 }}>{{ opcion9 }}</option>
+                  {{/if}}
+                  {{#if opcion10}}
+                  <option value={{ opcion10 }}>{{ opcion10 }}</option>
+                  {{/if}}
+                  {{#if opcion11}}
+                  <option value={{ opcion11 }}>{{ opcion11 }}</option>
+                  {{/if}}
+                  {{#if opcion12}}
+                  <option value={{ opcion12 }}>{{ opcion12 }}</option>
+                  {{/if}}
+                  {{#if opcion13}}
+                  <option value={{ opcion13 }}>{{ opcion13 }}</option>
+                  {{/if}}
+                  {{#if opcion14}}
+                  <option value={{ opcion14 }}>{{ opcion14 }}</option>
+                  {{/if}}
+                  {{#if opcion15}}
+                  <option value={{ opcion15 }}>{{ opcion15 }}</option>
+                  {{/if}}
+                  {{#if opcion16}}
+                  <option value={{ opcion16 }}>{{ opcion16 }}</option>
+                  {{/if}}
+                  {{#if opcion17}}
+                  <option value={{ opcion17 }}>{{ opcion17 }}</option>
+                  {{/if}}
+                  {{#if opcion18}}
+                  <option value={{ opcion18 }}>{{ opcion18 }}</option>
+                  {{/if}}
+                  {{#if opcion19}}
+                  <option value={{ opcion19 }}>{{ opcion19 }}</option>
+                  {{/if}}
+                  {{#if opcion20}}
+                  <option value={{ opcion20 }}>{{ opcion20 }}</option>
+                  {{/if}}
+                  {{#if opcion21}}
+                  <option value={{ opcion21 }}>{{ opcion21 }}</option>
+                  {{/if}}
+                  {{#if opcion22}}
+                  <option value={{ opcion22 }}>{{ opcion22 }}</option>
+                  {{/if}}
+                  {{#if opcion23}}
+                  <option value={{ opcion23 }}>{{ opcion23 }}</option>
+                  {{/if}}
+                  {{#if opcion24}}
+                  <option value={{ opcion24 }}>{{ opcion24 }}</option>
+                  {{/if}}
+                  {{#if opcion25}}
+                  <option value={{ opcion25 }}>{{ opcion25 }}</option>
+                  {{/if}}
+                  {{#if opcion26}}
+                  <option value={{ opcion26 }}>{{ opcion26 }}</option>
+                  {{/if}}
+
+
+                </select>
+
+                {{/if}}
+
+
+
+
+
 
                 {{#if indTexto }}
 
                 <div class="form-group">
-                  <textarea name="{{idPregunta}}_T" class="form-control" placeholder="Observacion" required ></textarea>
+                  <textarea name="{{idPregunta}}_T" class="form-control" placeholder="Observacion"></textarea>
                 </div>
 
 
@@ -67,7 +163,8 @@
 
                 <div class="form-group">
 
-                    <input type="file" name="{{idPregunta}}_D" id="{{idPregunta}}_D" value="" class="form-control text-dark border-success" required>
+                  <input type="file" name="{{idPregunta}}_D" id="{{idPregunta}}_D" value=""
+                    class="form-control text-dark border-success">
 
                 </div>
 
