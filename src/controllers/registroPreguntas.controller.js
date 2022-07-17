@@ -50,6 +50,8 @@ raskCtrl.rederrAskForm = async (req, res) => {
 
     //const lRespuestaSolo = await respuestas.find().lean();
 
+    console.log("cuenta que consulta:",req.user.correo);
+
 
     const lPreguntas = await respuestasPreguntas.find({codSector : req.user.codSector})
     .sort({ idPregunta : "asc" })
@@ -80,11 +82,6 @@ raskCtrl.createNewrAsk = async (req, res) => {
 //    upload.single('image');
 
 
-
-if (!req.files) {
-    res.send("File was not found");
-    return;
-  }
 
       
 console.log("a crear registro :",req.body);
@@ -161,7 +158,33 @@ console.log("req.files.file:",req.files);
         P00000024_P,
         P00000025_P,
         P00000026_P,
-        CodSector } = req.body;
+        P00000001_O,
+P00000002_O,
+P00000003_O,
+P00000004_O,
+P00000005_O,
+P00000006_O,
+P00000007_O,
+P00000008_O,
+P00000009_O,
+P00000010_O,
+P00000011_O,
+P00000012_O,
+P00000013_O,
+P00000014_O,
+P00000015_O,
+P00000016_O,
+P00000017_O,
+P00000018_O,
+P00000019_O,
+P00000020_O,
+P00000021_O,
+P00000022_O,
+P00000023_O,
+P00000024_O,
+P00000025_O,
+P00000026_O,
+ CodSector } = req.body;
     //console.log("Permite Archivo",indArchivo);
     //console.log("Permite Texto",indTexto);*/
 
@@ -248,7 +271,34 @@ console.log("req.files.file:",req.files);
             P00000024_P,
             P00000025_P,
             P00000026_P,
-            CodSector
+            OP0000001,
+            P00000001_O,
+P00000002_O,
+P00000003_O,
+P00000004_O,
+P00000005_O,
+P00000006_O,
+P00000007_O,
+P00000008_O,
+P00000009_O,
+P00000010_O,
+P00000011_O,
+P00000012_O,
+P00000013_O,
+P00000014_O,
+P00000015_O,
+P00000016_O,
+P00000017_O,
+P00000018_O,
+P00000019_O,
+P00000020_O,
+P00000021_O,
+P00000022_O,
+P00000023_O,
+P00000024_O,
+P00000025_O,
+P00000026_O,
+ CodSector
         });
     } else {
 
@@ -313,9 +363,36 @@ P00000023_P,
 P00000024_P,
 P00000025_P,
 P00000026_P,
+P00000001_O,
+P00000002_O,
+P00000003_O,
+P00000004_O,
+P00000005_O,
+P00000006_O,
+P00000007_O,
+P00000008_O,
+P00000009_O,
+P00000010_O,
+P00000011_O,
+P00000012_O,
+P00000013_O,
+P00000014_O,
+P00000015_O,
+P00000016_O,
+P00000017_O,
+P00000018_O,
+P00000019_O,
+P00000020_O,
+P00000021_O,
+P00000022_O,
+P00000023_O,
+P00000024_O,
+P00000025_O,
+P00000026_O,
             CodSector});
 
-            newRegistro.user = req.user.id;
+            //newRegistro.user = req.user.id;
+            newRegistro.user = req.user.correo;
             newRegistro.CodSector = req.user.codSector;
 
             for (const property in req.files) {
@@ -450,7 +527,7 @@ P00000026_P,
 raskCtrl.renderrAsk = async (req, res) => {
     //res.send('Render rAsks');
     //const preguntas = await rAsk.find({ user: req.user.id })
-    const preguntas = await registro.find({ codSector: req.user.codSector })
+    const preguntas = await registro.find({ codSector: req.user.codSector,user:req.user.correo })
     .sort({ createdAt: "desc" })
     .lean();
 
@@ -555,7 +632,7 @@ raskCtrl.updaterAsk = async (req, res) => {
         P00000024,	P00000024_T,	P00000024_D,        
         P00000025,	P00000025_T,	P00000025_D,
         P00000026,	P00000026_T,	P00000026_D,
-        CodSector } = req.body;
+        opcion,        CodSector } = req.body;
 
         const errors = [];
 
@@ -588,7 +665,8 @@ raskCtrl.updaterAsk = async (req, res) => {
                 P00000023,	P00000023_T,	P00000023_D,
                 P00000024,	P00000024_T,	P00000024_D,        
                 P00000025,	P00000025_T,	P00000025_D,
-                P00000026,	P00000026_T,	P00000026_D,  CodSector
+                P00000026,	P00000026_T,	P00000026_D,  
+opcion,                CodSector
             });
         } else {
 
@@ -621,7 +699,7 @@ raskCtrl.updaterAsk = async (req, res) => {
             P00000024,	P00000024_T,	P00000024_D,        
             P00000025,	P00000025_T,	P00000025_D,
             P00000026,	P00000026_T,	P00000026_D,
-            CodSector});
+            opcion,            CodSector});
 
             newRegistro.user = req.user.id;
             newRegistro.CodSector = req.user.codSector;
