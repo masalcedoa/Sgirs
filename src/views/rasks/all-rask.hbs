@@ -15,13 +15,13 @@
           <TR>
             <TH>Pregunta</TH>
             <TH>Respuesta</TH>
-            <TH>Observacion</TH>
+            <TH>Observacion/Opcion</TH>
             <TH>Adjunto</TH>
           </TR>
           <TR ALIGN=left>
 <TR><TD>{{P00000001_P}} </TD>
-<TD> {{P00000001}} </TD>
-<TD> {{P00000001_T}} </TD>
+<TD> {{P00000001}}  </TD>
+<TD> {{P00000001_T}} :  {{P00000001_O}}</TD>
 <TD>
 {{#if  P00000001_D}}
 <form action='/rasks/download/' method='POST'>
@@ -33,7 +33,7 @@
 </TR>
 <TR><TD>{{P00000002_P}} </TD>
 <TD> {{P00000002}} </TD>
-<TD> {{P00000002_T}} </TD>
+<TD> {{P00000002_T}} :  {{P00000002_O}}</TD>
 <TD>
 {{#if  P00000002_D}}
 <form action='/rasks/download/' method='POST'>
@@ -45,7 +45,7 @@
 </TR>
 <TR><TD>{{P00000003_P}} </TD>
 <TD> {{P00000003}} </TD>
-<TD> {{P00000003_T}} </TD>
+<TD> {{P00000003_T}} :  {{P00000003_O}}</TD>
 <TD>
 {{#if  P00000003_D}}
 <form action='/rasks/download/' method='POST'>
@@ -57,7 +57,7 @@
 </TR>
 <TR><TD>{{P00000004_P}} </TD>
 <TD> {{P00000004}} </TD>
-<TD> {{P00000004_T}} </TD>
+<TD> {{P00000004_T}} :  {{P00000004_O}}</TD>
 <TD>
 {{#if  P00000004_D}}
 <form action='/rasks/download/' method='POST'>
@@ -69,7 +69,8 @@
 </TR>
 <TR><TD>{{P00000005_P}} </TD>
 <TD> {{P00000005}} </TD>
-<TD> {{P00000005_T}} </TD>
+<TD> {{P00000005_T}} :  {{P00000005_O}}</TD>
+
 <TD>
 {{#if  P00000005_D}}
 <form action='/rasks/download/' method='POST'>
@@ -93,7 +94,7 @@
 </TR>
 <TR><TD>{{P00000007_P}} </TD>
 <TD> {{P00000007}} </TD>
-<TD> {{P00000007_T}} </TD>
+<TD> {{P00000007_T}} :  {{P00000007_O}}</TD>
 <TD>
 {{#if  P00000007_D}}
 <form action='/rasks/download/' method='POST'>
@@ -105,7 +106,7 @@
 </TR>
 <TR><TD>{{P00000008_P}} </TD>
 <TD> {{P00000008}} </TD>
-<TD> {{P00000008_T}} </TD>
+<TD> {{P00000008_T}} :  {{P00000008_O}}</TD>
 <TD>
 {{#if  P00000008_D}}
 <form action='/rasks/download/' method='POST'>
@@ -117,7 +118,7 @@
 </TR>
 <TR><TD>{{P00000009_P}} </TD>
 <TD> {{P00000009}} </TD>
-<TD> {{P00000009_T}} </TD>
+<TD> {{P00000009_T}} :  {{P00000009_O}}</TD>
 <TD>
 {{#if  P00000009_D}}
 <form action='/rasks/download/' method='POST'>
@@ -129,7 +130,7 @@
 </TR>
 <TR><TD>{{P00000010_P}} </TD>
 <TD> {{P00000010}} </TD>
-<TD> {{P00000010_T}} </TD>
+<TD> {{P00000010_T}} :  {{P00000010_O}}</TD>
 <TD>
 {{#if  P00000010_D}}
 <form action='/rasks/download/' method='POST'>
@@ -139,9 +140,24 @@
 {{/if}}
 </TD>
 </TR>
+
+<TR><TD>{{P00000011_P}} </TD>
+<TD> {{P00000011}} </TD>
+<TD> {{P00000011_T}} :  {{P00000011_O}}</TD>
+<TD>
+{{#if  P00000011_D}}
+<form action='/rasks/download/' method='POST'>
+        <input type='hidden' name='filename' value='{{P00000011_D}}'>
+          <button type='submit' class='btn btn-success btn-block btn-sm'>Download</button>
+        </form>
+{{/if}}
+</TD>
+</TR>
+
+
 <TR><TD>{{P00000012_P}} </TD>
 <TD> {{P00000012}} </TD>
-<TD> {{P00000012_T}} </TD>
+<TD> {{P00000012_T}} :  {{P00000012_O}}</TD>
 <TD>
 {{#if  P00000012_D}}
 <form action='/rasks/download/' method='POST'>
@@ -153,7 +169,7 @@
 </TR>
 <TR><TD>{{P00000013_P}} </TD>
 <TD> {{P00000013}} </TD>
-<TD> {{P00000013_T}} </TD>
+<TD> {{P00000013_T}} :  {{P00000013_O}}</TD>
 <TD>
 {{#if  P00000013_D}}
 <form action='/rasks/download/' method='POST'>
@@ -165,7 +181,7 @@
 </TR>
 <TR><TD>{{P00000014_P}} </TD>
 <TD> {{P00000014}} </TD>
-<TD> {{P00000014_T}} </TD>
+<TD> {{P00000013_T}} :  {{P00000014_O}}</TD>
 <TD>
 {{#if  P00000014_D}}
 <form action='/rasks/download/' method='POST'>
@@ -177,7 +193,7 @@
 </TR>
 <TR><TD>{{P00000015_P}} </TD>
 <TD> {{P00000015}} </TD>
-<TD> {{P00000015_T}} </TD>
+<TD> {{P00000015_T}} :  {{P00000015_O}}</TD>
 <TD>
 {{#if  P00000015_D}}
 <form action='/rasks/download/' method='POST'>
@@ -189,7 +205,7 @@
 </TR>
 <TR><TD>{{P00000016_P}} </TD>
 <TD> {{P00000016}} </TD>
-<TD> {{P00000016_T}} </TD>
+<TD> {{P00000016_T}} :  {{P00000016_O}}</TD>
 <TD>
 {{#if  P00000016_D}}
 <form action='/rasks/download/' method='POST'>
@@ -201,7 +217,7 @@
 </TR>
 <TR><TD>{{P00000017_P}} </TD>
 <TD> {{P00000017}} </TD>
-<TD> {{P00000017_T}} </TD>
+<TD> {{P00000017_T}} :  {{P00000017_O}}</TD>
 <TD>
 {{#if  P00000017_D}}
 <form action='/rasks/download/' method='POST'>
@@ -213,7 +229,7 @@
 </TR>
 <TR><TD>{{P00000018_P}} </TD>
 <TD> {{P00000018}} </TD>
-<TD> {{P00000018_T}} </TD>
+<TD> {{P00000018_T}} :  {{P00000018_O}}</TD>
 <TD>
 {{#if  P00000018_D}}
 <form action='/rasks/download/' method='POST'>
@@ -225,7 +241,7 @@
 </TR>
 <TR><TD>{{P00000019_P}} </TD>
 <TD> {{P00000019}} </TD>
-<TD> {{P00000019_T}} </TD>
+<TD> {{P00000019_T}} :  {{P00000019_O}}</TD>
 <TD>
 {{#if  P00000019_D}}
 <form action='/rasks/download/' method='POST'>
@@ -237,7 +253,7 @@
 </TR>
 <TR><TD>{{P00000020_P}} </TD>
 <TD> {{P00000020}} </TD>
-<TD> {{P00000020_T}} </TD>
+<TD> {{P00000020_T}} :  {{P00000020_O}}</TD>
 <TD>
 {{#if  P00000020_D}}
 <form action='/rasks/download/' method='POST'>
@@ -249,7 +265,7 @@
 </TR>
 <TR><TD>{{P00000021_P}} </TD>
 <TD> {{P00000021}} </TD>
-<TD> {{P00000021_T}} </TD>
+<TD> {{P00000021_T}} :  {{P00000021_O}}</TD>
 <TD>
 {{#if  P00000021_D}}
 <form action='/rasks/download/' method='POST'>
@@ -261,7 +277,7 @@
 </TR>
 <TR><TD>{{P00000022_P}} </TD>
 <TD> {{P00000022}} </TD>
-<TD> {{P00000022_T}} </TD>
+<TD> {{P00000022_T}} :  {{P00000022_O}}</TD>
 <TD>
 {{#if  P00000022_D}}
 <form action='/rasks/download/' method='POST'>
@@ -273,7 +289,7 @@
 </TR>
 <TR><TD>{{P00000023_P}} </TD>
 <TD> {{P00000023}} </TD>
-<TD> {{P00000023_T}} </TD>
+<TD> {{P00000023_T}} :  {{P00000023_O}}</TD>
 <TD>
 {{#if  P00000023_D}}
 <form action='/rasks/download/' method='POST'>
@@ -285,7 +301,7 @@
 </TR>
 <TR><TD>{{P00000024_P}} </TD>
 <TD> {{P00000024}} </TD>
-<TD> {{P00000024_T}} </TD>
+<TD> {{P00000024_T}} :  {{P00000024_O}}</TD>
 <TD>
 {{#if  P00000024_D}}
 <form action='/rasks/download/' method='POST'>
@@ -297,7 +313,7 @@
 </TR>
 <TR><TD>{{P00000025_P}} </TD>
 <TD> {{P00000025}} </TD>
-<TD> {{P00000025_T}} </TD>
+<TD> {{P00000025_T}} :  {{P00000025_O}}</TD>
 <TD>
 {{#if  P00000025_D}}
 <form action='/rasks/download/' method='POST'>
@@ -309,7 +325,7 @@
 </TR>
 <TR><TD>{{P00000026_P}} </TD>
 <TD> {{P00000026}} </TD>
-<TD> {{P00000026_T}} </TD>
+<TD> {{P00000026_T}} :  {{P00000026_O}}</TD>
 <TD>
 {{#if  P00000026_D}}
 <form action='/rasks/download/' method='POST'>
