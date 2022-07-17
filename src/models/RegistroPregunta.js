@@ -527,8 +527,136 @@ const rAskSchema = new Schema(
         required: false,
         unique : false
       },
-
-  
+      P00000001_O: {
+        type: String,
+        required: false,
+        unique : false
+      },
+P00000002_O: {
+        type: String,
+        required: false,
+        unique : false
+      },
+P00000003_O: {
+        type: String,
+        required: false,
+        unique : false
+      },
+P00000004_O: {
+        type: String,
+        required: false,
+        unique : false
+      },
+P00000005_O: {
+        type: String,
+        required: false,
+        unique : false
+      },
+P00000006_O: {
+        type: String,
+        required: false,
+        unique : false
+      },
+P00000007_O: {
+        type: String,
+        required: false,
+        unique : false
+      },
+P00000008_O: {
+        type: String,
+        required: false,
+        unique : false
+      },
+P00000009_O: {
+        type: String,
+        required: false,
+        unique : false
+      },
+P00000010_O: {
+        type: String,
+        required: false,
+        unique : false
+      },
+P00000011_O: {
+        type: String,
+        required: false,
+        unique : false
+      },
+P00000012_O: {
+        type: String,
+        required: false,
+        unique : false
+      },
+P00000013_O: {
+        type: String,
+        required: false,
+        unique : false
+      },
+P00000014_O: {
+        type: String,
+        required: false,
+        unique : false
+      },
+P00000015_O: {
+        type: String,
+        required: false,
+        unique : false
+      },
+P00000016_O: {
+        type: String,
+        required: false,
+        unique : false
+      },
+P00000017_O: {
+        type: String,
+        required: false,
+        unique : false
+      },
+P00000018_O: {
+        type: String,
+        required: false,
+        unique : false
+      },
+P00000019_O: {
+        type: String,
+        required: false,
+        unique : false
+      },
+P00000020_O: {
+        type: String,
+        required: false,
+        unique : false
+      },
+P00000021_O: {
+        type: String,
+        required: false,
+        unique : false
+      },
+P00000022_O: {
+        type: String,
+        required: false,
+        unique : false
+      },
+P00000023_O: {
+        type: String,
+        required: false,
+        unique : false
+      },
+P00000024_O: {
+        type: String,
+        required: false,
+        unique : false
+      },
+P00000025_O: {
+        type: String,
+        required: false,
+        unique : false
+      },
+P00000026_O: {
+        type: String,
+        required: false,
+        unique : false
+      },
       CodSector: {
         type: String,
         required: true,
