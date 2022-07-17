@@ -11,7 +11,7 @@ const UserSchema = new Schema(
       correo: { type: String, required: true, unique: true, trim: true },
       password: { type: String, required: true },
       date: { type: Date, default: Date.now },
-      documento_sgirs: { type: String, required: true, trim: true }
+      documento_sgirs: { type: String, required: false, trim: true }
     },
     {
       timestamps: true,
