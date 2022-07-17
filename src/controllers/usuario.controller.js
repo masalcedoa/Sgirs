@@ -47,10 +47,6 @@ usersCtrl.singup = async (req, res) => {
     errors.push({ text: "Passwords must be at least 4 characters." });
   }
 
-  
-if (!req.files) {
-  errors.push({ text: "Falta documento" });
-}
 
 
 
@@ -72,7 +68,7 @@ if (!req.files) {
 
     
     if (emailUser) {
-      console.log("compare correo");
+      //console.log("compare correo");
       req.flash("error_msg", "The Email is already in use.");
       res.redirect("/usuario/signup");
     } else {
@@ -124,7 +120,7 @@ function actualizar() {
 usersCtrl.renderSigninForm = async (req, res) => {
 
   const lSectores = await sector.find().lean();
-  const lPeriodos = await Periodo.find().lean();
+  const lPeriodos = await Periodo.find({Estado:true}).lean();
 
  // console.log(lSectores);
 
