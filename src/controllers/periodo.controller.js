@@ -10,7 +10,7 @@ PeriodosCtrl.rederPeriodoForm = (req, res) => {
     //const newPeriodo = new Periodo({Periodo: Periodo, Descripcion: Descripcion});
 
 
-    res.render('Periodos/new-Periodo');
+    res.render('periodos/new-´periodo');
 }
 
 PeriodosCtrl.createNewPeriodos = async (req, res) => {
@@ -25,7 +25,7 @@ PeriodosCtrl.createNewPeriodos = async (req, res) => {
         errors.push({ text: "Por favor digite la Descripcion" });
     }
     if (errors.length > 0) {
-        res.render("Periodos/new-Periodo", {
+        res.render("periodos/new-periodo", {
             errors,
             Periodo,
             Descripcion,
@@ -49,7 +49,7 @@ PeriodosCtrl.renderPeriodos = async (req, res) => {
     //const Periodos = await Periodo.find()
     .sort({ date: "desc" })
     .lean();
-  res.render("Periodos/all-Periodos", { Periodos });
+  res.render("periodos/all-periodos", { Periodos });
 }
 
 PeriodosCtrl.renderEditForm = async (req, res) => {
@@ -58,7 +58,7 @@ PeriodosCtrl.renderEditForm = async (req, res) => {
       req.flash("error_msg", "Not Authorized");
       return res.redirect("/Periodos");
     }*/
-    res.render("Periodos/edit-Periodo", { Periodos });
+    res.render("periodos/edit-periodo", { Periodos });
 }
 
 PeriodosCtrl.updateForm = (req, res) => {
@@ -70,7 +70,7 @@ PeriodosCtrl.deletePeriodo = async (req, res) => {
     //res.send('delete Periodos');
     await PeriodoC.findByIdAndDelete(req.params.id);
     req.flash("success_msg", "Periodo Deleted Successfully");
-    res.redirect("/Periodos");
+    res.redirect("/periodos");
 
 
 }
@@ -80,7 +80,7 @@ PeriodosCtrl.updatePeriodo = async (req, res) => {
     await PeriodoC.findByIdAndUpdate(req.params.id, { Periodo, Descripcion, Estado });
     console.log("update");
     req.flash("success_msg", "Periodo Updated Successfully");
-    res.redirect("/Periodos");
+    res.redirect("/periodos");
   };
   
 module.exports = PeriodosCtrl;
