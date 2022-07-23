@@ -24,8 +24,9 @@
           </div>
          
           <div class="form-group">
-            <select class="form-control" name="codSector"  id="codSector"  placeholder="Sectores">
-              <option value="na" selected></option>Selecione Sector</option>
+            <select class="form-control" name="codSector"  id="codSector"  required>
+                      <option value = "" disabled selected>Escoger sector
+                  </option>
                {{#each lSectores}}
                 <option value={{CodSector}}>{{ Descripcion }}</option>
               {{/each}}
