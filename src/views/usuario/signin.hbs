@@ -10,27 +10,13 @@
       <div class="card-body">
         <form action="/usuario/signin" method="POST">
           <div class="form-group">
-            <!-- <input type="text" class="form-control" name="codSector" placeholder="Sector" autofocus >-->
-            <select class="form-control" name="Periodo" id="Periodo" placeholder="Periodo">
-              {{#each lPeriodos}}
-              <option type ="date" value={{Periodo}}>{{ Periodo }}</option>
-              {{/each}}
-            </select>
-          </div>
-          <div class="form-group">
-            <!-- <input type="text" class="form-control" name="codSector" placeholder="Sector" autofocus >-->
-            <select class="form-control" name="codSector" id="codSector" placeholder="Sector">
-              {{#each lSectores}}
-              <option value={{CodSector}} >{{ Descripcion }}</option>
-              {{/each}}
-            </select>
-          </div>
-          <div class="form-group">
-            <input type="email" class="form-control" name="correo" placeholder="Correo" autofocus>
-          </div>
-          <div class="form-group">
-            <input type="password" class="form-control" name="password" placeholder="Password">
-          </div>
+            <div class="form-group">
+              <input type="email" class="form-control" name="correo" placeholder="Correo" autofocus>
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+
           <button class="btn btn-primary btn-block">
             Entrar
           </button>
