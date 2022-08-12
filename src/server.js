@@ -144,6 +144,7 @@ app.use(require('./routes/sector.routes'));
 app.use(require('./routes/ask.routes'));
 app.use(require('./routes/periodo.routes'));
 app.use(require('./routes/rask.routes'));
+app.use(require('./routes/rind.routes'));
 
 
 //static files
