@@ -1,0 +1,42 @@
+{{#each errors}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  {{text}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{{/each}}
+
+<div class="col-md-4 mx-auto">
+  <div class="card">
+    <div class="card-header">
+      <h3>Edit asks</h3>
+    </div>
+    <div class="card-body">
+      <form action="/asks/edit-ask/{{preguntas._id}}?_method=PUT" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="form-group">
+          <input type="text" name="idPregunta" class="form-control" value="{{preguntas.idPregunta}}"/>
+        </div>
+                <div class="form-group">
+          <input type="text" name="pregunta" class="form-control" value="{{preguntas.pregunta}}"/>
+        </div>
+
+        <div class="form-group">
+          <textarea name="indArchivo" class="form-control">Tiene archivo: {{preguntas.indArchivo}}</textarea>
+          <input placeholder="Ind. Archivo"  class="form-check-input" name="indArchivo" type="radio" value=1 id="indArchivo">
+        </div>
+        <div class="form-group">
+          <textarea placeholder="Ind. texto" name="indTexto" class="form-control">Tiene texto:  {{preguntas.indTexto}} </textarea>
+        </div>
+
+
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" type="submit">
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
