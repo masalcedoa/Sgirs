@@ -1,6 +1,6 @@
 const res = require("express/lib/response");
 const rAsk = require("../models/Pregunta");
-const registro = require("../models/Registroindicador");
+const registro = require("../models/RegistroIndicador");
 const vIndicador = require("../models/vIndicators");
 
 const raskCtrl = {};
