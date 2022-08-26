@@ -53,7 +53,7 @@ raskCtrl.rederrAskForm = async (req, res) => {
     console.log("cuenta que consulta:",req.user.correo);
 
 
-    const lPreguntas = await respuestasPreguntas.find({codSector : req.user.codSector})
+    const lPreguntas = await respuestasPreguntas.find({codSector : req.user.codSector, periodo : req.user.periodo})
     .sort({ idPregunta : "asc" })
     .lean();
 
@@ -394,6 +394,8 @@ P00000026_O,
             //newRegistro.user = req.user.id;
             newRegistro.user = req.user.correo;
             newRegistro.CodSector = req.user.codSector;
+            newRegistro.periodo = req.user.periodo;
+            console.log("periodo a grabar",req.user.periodo);
 
             for (const property in req.files) {
               //console.log('arreglo',`${property}: ${req.files[property]}`);
@@ -527,7 +529,7 @@ P00000026_O,
 raskCtrl.renderrAsk = async (req, res) => {
     //res.send('Render rAsks');
     //const preguntas = await rAsk.find({ user: req.user.id })
-    const preguntas = await registro.find({ codSector: req.user.codSector,user:req.user.correo })
+    const preguntas = await registro.find({ codSector: req.user.codSector,user:req.user.correo, periodo : req.user.periodo })
     .sort({ createdAt: "desc" })
     .lean();
 
