@@ -1021,6 +1021,12 @@ const rIndicatorSchema = new Schema(
             required: false,
             unique: false
         },
+        periodo: {
+            type: String,
+            required: true,
+            //        unique: true, 
+            trim: true
+          },
          idSector: {
             type: String,
             required: true,
