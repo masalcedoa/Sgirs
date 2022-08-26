@@ -657,6 +657,12 @@ const rAskSchema = new Schema(
       required: false,
       unique: false
     },
+    periodo: {
+      type: String,
+      required: true,
+      //        unique: true, 
+      trim: true
+    },
     CodSector: {
       type: String,
       required: true,
