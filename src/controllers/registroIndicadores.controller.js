@@ -1,6 +1,6 @@
 const res = require("express/lib/response");
 const rAsk = require("../models/Pregunta");
-const registro = require("../models/RegistroIndicador");
+const registro = require("../models/Registroindicador");
 const vIndicador = require("../models/vIndicators");
 
 const raskCtrl = {};
@@ -13,10 +13,10 @@ const sector = require("../models/Sector");
 
 raskCtrl.rederrAskForm = async (req, res) => {
   console.log("cuenta que consulta:", req.user.correo);
-  console.log("cuenta que consulta indicador CodSector:", req.user.codSector);
+  console.log("cuenta que consulta indicador CodSector:", req.user.codSector, req.user.periodo);
 
 
-  const lPreguntas = await vIndicador.find({ idSector: req.user.codSector })
+  const lPreguntas = await vIndicador.find({ idSector: req.user.codSector,periodo : req.user.periodo  })
     .sort({ idIndicador: "asc" })
     .lean();
 
@@ -762,6 +762,8 @@ raskCtrl.createNewrAsk = async (req, res) => {
     //newRegistro.user = req.user.id;
     newRegistro.user = req.user.correo;
     newRegistro.idSector = req.user.codSector;
+    newRegistro.periodo = req.user.periodo;
+    console.log("periodo a grabar",req.user.periodo);
     console.log("antes de cargar la formula",req.body.VAR0000001_IND0000001);
     var f1 = 0.0;
     var f2 = 0.0;
@@ -842,7 +844,7 @@ raskCtrl.createNewrAsk = async (req, res) => {
 raskCtrl.renderrAsk = async (req, res) => {
   //res.send('Render rIndicators');
   //const preguntas = await rAsk.find({ user: req.user.id })
-  const preguntas = await registro.find({ idSector: req.user.codSector, user: req.user.correo })
+  const preguntas = await registro.find({ idSector: req.user.codSector, user: req.user.correo, periodo : req.user.periodo })
     .sort({ createdAt: "desc" })
     .lean();
 
