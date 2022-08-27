@@ -853,8 +853,12 @@ raskCtrl.renderrAsk = async (req, res) => {
 }
 
 raskCtrl.renderEditrAskForm = async (req, res) => {
-  const preguntas = await rAsk.findById(req.params.id).lean();
-  if (preguntas.user != req.user.id) {
+  const preguntas = await registro.findById(req.params.id).lean();
+
+  console.log("cuenta a editar user req",req.user.correo, req.params.id);
+  console.log("cuenta a editar user indicators",preguntas);
+
+  if (preguntas.user != req.user.correo) {
     req.flash("error_msg", "Not Authorized");
     return res.redirect("/rIndicators");
   }
@@ -873,7 +877,7 @@ raskCtrl.DownloadFile = (req, res) => {
 
 raskCtrl.deleterAsk = async (req, res) => {
   //res.send('delete rIndicators');
-  await rAsk.findByIdAndDelete(req.params.id);
+  await registro.findByIdAndDelete(req.params.id);
   req.flash("success_msg", "rAsk Deleted Successfully");
   res.redirect("/rIndicators");
 
