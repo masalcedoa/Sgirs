@@ -1,4 +1,4 @@
-<div class="col-md-9 mx-auto">
+<div class="col-md-18 mx-auto">
   <div class="card text-center">
     <div class="card-header">
       <h3>Registro de Indicadores</h3>
@@ -34,7 +34,9 @@
 
             </TD>
 
-            <TD width="350">
+            <TD width="650">
+
+              {{#if indOpcion}}
 
 
 
@@ -96,6 +98,7 @@
                 <input type="text" name="VAR0000004" id="VAR0000004" value="{{VAR0000004}}"
                   class="form-control text-dark border-success">
               </div>
+
 
 
               {{/if}}
@@ -396,11 +399,158 @@
 
               {{/if}}
 
+              {{/if}}
+
+              {{#if indOpcion4 }}
+
+
+              <label>
+                {{Opcion1}}
+              </label>
+              <select class="form-control" name="opcion41" id="uar_O">
+                <option value="" disabled selected>Escoger rpta
+                </option>
+                <option value="SI">SI</option>
+                <option value="NO">NO</option>
+                </option>
+              </select>
+              <div style="visibility: hidden">
+                <input type="text" name="aOpcion1" id="aOpcion1" value="{{Opcion1}}"
+                  class="form-control text-dark border-success">
+              </div>
+
+              <label>
+                {{Opcion2}}
+              </label>
+              <select class="form-control" name="opcion42" id="uar_O">
+                <option value="" disabled selected>Escoger rpta
+                </option>
+                <option value="SI">SI</option>
+                <option value="NO">NO</option>
+                </option>
+              </select>
+              <div style="visibility: hidden">
+                <input type="text" name="aOpcion2" id="aOpcion2" value="{{Opcion2}}"
+                  class="form-control text-dark border-success">
+              </div>
+
+
+              <label>
+                {{Opcion3}}
+              </label>
+              <select class="form-control" name="opcion43" id="uar_O">
+                <option value="" disabled selected>Escoger rpta
+                </option>
+                <option value="SI">SI</option>
+                <option value="NO">NO</option>
+                </option>
+              </select>
+
+              <div style="visibility: hidden">
+                <input type="text" name="aOpcion3" id="aOpcion3" value="{{Opcion3}}"
+                  class="form-control text-dark border-success">
+              </div>
+
+
+
+              <label>
+                {{Opcion4}}
+              </label>
+              <select class="form-control" name="opcion44" id="uar_O">
+                <option value="" disabled selected>Escoger rpta
+                </option>
+                <option value="SI">SI</option>
+                <option value="NO">NO</option>
+                </option>
+              </select>
+
+              <div style="visibility: hidden">
+                <input type="text" name="aOpcion4" id="aOpcion4" value="{{Opcion4}}"
+                  class="form-control text-dark border-success">
+              </div>
+
+              <label>
+                {{Opcion5}}
+              </label>
+              <select class="form-control" name="opcion45" id="uar_O">
+                <option value="" disabled selected>Escoger rpta
+                </option>
+                <option value="SI">SI</option>
+                <option value="NO">NO</option>
+                </option>
+              </select>
+              <div style="visibility: hidden">
+                <input type="text" name="aOpcion5" id="aOpcion5" value="{{Opcion5}}"
+                  class="form-control text-dark border-success">
+              </div>
+
+
+              <label>
+                {{Opcion6}}
+              </label>
+              <select class="form-control" name="opcion46" id="uar_O">
+                <option value="" disabled selected>Escoger rpta
+                </option>
+                <option value="SI">SI</option>
+                <option value="NO">NO</option>
+                </option>
+              </select>
+
+              <div style="visibility: hidden">
+                <input type="text" name="aOpcion6" id="aOpcion6" value="{{Opcion6}}"
+                  class="form-control text-dark border-success">
+              </div>
+
+              <label>
+                {{Opcion7}}
+              </label>
+              <select class="form-control" name="opcion47" id="uar_O">
+                <option value="" disabled selected>Escoger rpta
+                </option>
+                <option value="SI">SI</option>
+                <option value="NO">NO</option>
+                </option>
+              </select>
+
+
+              <div style="visibility: hidden">
+                <input type="text" name="aOpcion7" id="aOpcion7" value="{{Opcion7}}"
+                  class="form-control text-dark border-success">
+              </div>
+
+              <label>
+                {{Opcion8}}
+              </label>
+              <select class="form-control" name="opcion48" id="uar_O">
+                <option value="" disabled selected>Escoger rpta
+                </option>
+                <option value="SI">SI</option>
+                <option value="NO">NO</option>
+                </option>
+              </select>
+
+              <div style="visibility: hidden">
+                <input type="text" name="aOpcion8" id="aOpcion8" value="{{Opcion8}}"
+                  class="form-control text-dark border-success">
+              </div>
+
+
+
+
+
+
+              {{/if}}
+
+
+
+
+
 
 
             </TD>
 
           </TR>
+
 
 
           {{/each}}
