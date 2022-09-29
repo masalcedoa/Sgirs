@@ -16,14 +16,50 @@ raskCtrl.rederrAskForm = async (req, res) => {
   console.log("cuenta que consulta indicador CodSector:", req.user.codSector, req.user.periodo);
 
 
-  const lPreguntas = await vIndicador.find({ idSector: req.user.codSector,periodo : req.user.periodo  })
+  const lPreguntas = await vIndicador.find({ idSector: req.user.codSector, periodo: req.user.periodo })
     .sort({ idIndicador: "asc" })
     .lean();
 
   console.log("preguntas  devueltas: ", lPreguntas);
 
 
-  res.render('rIndicators/new-rask', { lPreguntas });
+  const cPreguntasA = 0;
+  var cAdd = "SI";
+  const cInfo = [];
+  
+
+
+ if (req.user.codSector != "SEC004") {
+
+  const cPreguntasA = await registro.find({ codSector: req.user.codSector, periodo: req.user.periodo, user : req.user.correo }).count()
+
+  console.log("validacion de cantidad de indicadores in if",cPreguntasA );
+  if (cPreguntasA > 0) {
+    cInfo.push({ text: "ya existen preguntas para el periodo seleccionado" });
+    cAdd = "NO";
+  }
+
+
+}  
+
+
+if (cInfo.length > 0) {
+  res.render("index", {
+    cInfo
+  });
+  req.flash("error_msg", "ya existen indicadores para el periodo seleccionado");
+  res.redirect("/");
+
+} else {
+    res.render('rIndicators/new-rask', { lPreguntas });
+  console.log("Termine de renderizar");
+  }
+
+
+
+
+
+  //res.render('rIndicators/new-rask', { lPreguntas });
 
 
   console.log("Termine de renderizar");
@@ -32,10 +68,10 @@ raskCtrl.rederrAskForm = async (req, res) => {
 
 raskCtrl.createNewrAsk = async (req, res) => {
 
-  console.log("Inicio Create");
+  //console.log("Inicio Create");
 
 
-  console.log("a crear registro :", req.body);
+  //console.log("a crear registro :", req.body);
 
 
 
@@ -273,10 +309,31 @@ raskCtrl.createNewrAsk = async (req, res) => {
     FOR0000007,
     FOR0000008,
     FOR0000009,
-    FOR0000010
+    FOR0000010,
+    opcion41,
+    opcion42,
+    opcion43,
+    opcion44,
+    opcion45,
+    opcion46,
+    opcion47,
+    opcion48,
+    aOpcion1,
+    aOpcion2,
+    aOpcion3,
+    aOpcion4,
+    aOpcion5,
+    aOpcion6,
+    aOpcion7,
+    aOpcion8,
+    VAR0000000_IND0000004
+
+
   } = req.body;
 
   const errors = [];
+
+
 
   if (errors.length > 0) {
     res.render("rIndicators/new-rask", {
@@ -512,7 +569,25 @@ raskCtrl.createNewrAsk = async (req, res) => {
       FOR0000007,
       FOR0000008,
       FOR0000009,
-      FOR0000010
+      FOR0000010,
+      opcion41,
+      opcion42,
+      opcion43,
+      opcion44,
+      opcion45,
+      opcion46,
+      opcion47,
+      opcion48,
+      aOpcion1,
+      aOpcion2,
+      aOpcion3,
+      aOpcion4,
+      aOpcion5,
+      aOpcion6,
+      aOpcion7,
+      aOpcion8,
+      VAR0000000_IND0000004
+
     });
   } else {
 
@@ -747,7 +822,7 @@ raskCtrl.createNewrAsk = async (req, res) => {
       , VAR0000018_IND0000010
       , VAR0000019_IND0000010
       , VAR0000020_IND0000010,
-      FOR0000001 ,
+      FOR0000001,
       FOR0000002,
       FOR0000003,
       FOR0000004,
@@ -756,15 +831,32 @@ raskCtrl.createNewrAsk = async (req, res) => {
       FOR0000007,
       FOR0000008,
       FOR0000009,
-      FOR0000010
+      FOR0000010,
+      opcion41,
+      opcion42,
+      opcion43,
+      opcion44,
+      opcion45,
+      opcion46,
+      opcion47,
+      opcion48,
+      aOpcion1,
+      aOpcion2,
+      aOpcion3,
+      aOpcion4,
+      aOpcion5,
+      aOpcion6,
+      aOpcion7,
+      aOpcion8,
+      VAR0000000_IND0000004
     });
 
     //newRegistro.user = req.user.id;
     newRegistro.user = req.user.correo;
     newRegistro.idSector = req.user.codSector;
     newRegistro.periodo = req.user.periodo;
-    console.log("periodo a grabar",req.user.periodo);
-    console.log("antes de cargar la formula",req.body.VAR0000001_IND0000001);
+    console.log("periodo a grabar", req.user.periodo);
+    console.log("antes de cargar la formula", req.body.VAR0000001_IND0000001);
     var f1 = 0.0;
     var f2 = 0.0;
 
@@ -772,11 +864,11 @@ raskCtrl.createNewrAsk = async (req, res) => {
     //f1
 
     if (req.body.IND0000001) {
-    var f1 = req.body.VAR0000001_IND0000001;
-    var f2 = req.body.VAR0000002_IND0000001;
-    var f3 = ((f1 / f2) * 100);
+      var f1 = req.body.VAR0000001_IND0000001;
+      var f2 = req.body.VAR0000002_IND0000001;
+      var f3 = ((f1 / f2) * 100);
 
-    newRegistro.FOR0000001 = f3.toFixed(2);
+      newRegistro.FOR0000001 = f3.toFixed(2);
     }
 
     if (req.body.IND0000002) {
@@ -785,48 +877,131 @@ raskCtrl.createNewrAsk = async (req, res) => {
       var f3 = ((f1 / f2) * 100);
 
       newRegistro.FOR0000002 = f3.toFixed(2);
-      }
-  
-      if (req.body.IND0000003) {
+    }
 
-        newRegistro.FOR0000003 = req.body.VAR0000005_IND0000003;
-        }
+    if (req.body.IND0000003) {
 
-        if (req.body.IND0000005) {
-          var f1 = req.body.VAR0000009_IND0000005;
-          var f2 = req.body.VAR0000010_IND0000005;
-          var f3 = ((f1 / f2) * 100);
-    
-          newRegistro.FOR0000005 = f3.toFixed(2);
-          }
+      newRegistro.FOR0000003 = req.body.VAR0000005_IND0000003;
+    }
 
-          
-        if (req.body.IND0000007) {
-          var f1 = req.body.VAR0000013_IND0000007;
-          var f2 = req.body.VAR0000014_IND0000007;
-          var f3 = ((f1 / f2) * 100);
-    
-          newRegistro.FOR0000007 = f3.toFixed(2);
-          }
+    if (req.body.IND0000005) {
+      var f1 = req.body.VAR0000009_IND0000005;
+      var f2 = req.body.VAR0000010_IND0000005;
+      var f3 = ((f1 / f2) * 100);
 
-                    
-        if (req.body.IND0000008) {
-          var f1 = req.body.VAR0000015_IND0000008;
-          var f2 = req.body.VAR0000016_IND0000008;
-          var f3 = ((f1 / f2) * 100);
-    
-          newRegistro.FOR0000007 = f3.toFixed(2);
-          }
+      newRegistro.FOR0000005 = f3.toFixed(2);
+    }
 
-          if (req.body.IND0000009) {
-            var f1 = req.body.VAR0000015_IND0000008;
-            var f2 = req.body.VAR0000016_IND0000008;
-            var f3 = ((f1 / f2) * 100);
-      
-            newRegistro.FOR0000009 = f3.toFixed(2);
-            }
+
+    if (req.body.IND0000007) {
+      var f1 = req.body.VAR0000013_IND0000007;
+      var f2 = req.body.VAR0000014_IND0000007;
+      var f3 = ((f1 / f2) * 100);
+
+      newRegistro.FOR0000007 = f3.toFixed(2);
+    }
+
+
+    if (req.body.IND0000008) {
+      var f1 = req.body.VAR0000015_IND0000008;
+      var f2 = req.body.VAR0000016_IND0000008;
+      var f3 = ((f1 / f2) * 100);
+
+      newRegistro.FOR0000007 = f3.toFixed(2);
+    }
+
+    if (req.body.IND0000009) {
+      var f1 = req.body.VAR0000015_IND0000008;
+      var f2 = req.body.VAR0000016_IND0000008;
+      var f3 = ((f1 / f2) * 100);
+
+      newRegistro.FOR0000009 = f3.toFixed(2);
+    }
 
     //console.log("registro a gabrar",newRegistro);
+
+    console.log("cargar de uar",req.body);
+
+    var uar = "No Cumple";
+    var contYes = 0; 
+    var contNo = 0;
+
+    // 2022-09-15.ini
+      
+
+        if (req.body.opcion41 == "SI") {
+          contYes = contYes + 1;
+        }
+        else {
+          contNo = contNo + 1;
+        }
+
+        
+        if (req.body.opcion42 == "SI") {
+          contYes = contYes + 1;
+        }
+        else {
+          contNo = contNo + 1;
+        }
+
+        if (req.body.opcion43 == "SI") {
+          contYes = contYes + 1;
+        }
+        else {
+          contNo = contNo + 1;
+        }
+
+        if (req.body.opcion44 == "SI") {
+          contYes = contYes + 1;
+        }
+        else {
+          contNo = contNo + 1;
+        }
+
+
+        if (req.body.opcion45 == "SI") {
+          contYes = contYes + 1;
+        }
+        else {
+          contNo = contNo + 1;
+        }
+
+        if (req.body.opcion46 == "SI") {
+          contYes = contYes + 1;
+        }
+        else {
+          contNo = contNo + 1;
+        }
+
+        if (req.body.opcion47 == "SI") {
+          contYes = contYes + 1;
+        }
+        else {
+          contNo = contNo + 1;
+        }
+
+        if (req.body.opcion48 == "SI") {
+          contYes = contYes + 1;
+        }
+        else {
+          contNo = contNo + 1;
+        }
+
+      var vuar = ((contYes / 8) * 100);
+
+
+      if (vuar == 100) {
+        newRegistro.VAR0000000_IND0000004 = "Cumple totalmente";
+      }else if (vuar >= 60 ){
+        newRegistro.VAR0000000_IND0000004 = "Cumple parcialmente";
+      } else {
+        newRegistro.VAR0000000_IND0000004 = "No cumple";
+      }
+
+
+
+     
+    // 2022-09-15.fin
 
 
 
@@ -844,7 +1019,7 @@ raskCtrl.createNewrAsk = async (req, res) => {
 raskCtrl.renderrAsk = async (req, res) => {
   //res.send('Render rIndicators');
   //const preguntas = await rAsk.find({ user: req.user.id })
-  const preguntas = await registro.find({ idSector: req.user.codSector, user: req.user.correo, periodo : req.user.periodo })
+  const preguntas = await registro.find({ idSector: req.user.codSector, user: req.user.correo, periodo: req.user.periodo })
     .sort({ createdAt: "desc" })
     .lean();
 
@@ -855,8 +1030,8 @@ raskCtrl.renderrAsk = async (req, res) => {
 raskCtrl.renderEditrAskForm = async (req, res) => {
   const preguntas = await registro.findById(req.params.id).lean();
 
-  console.log("cuenta a editar user req",req.user.correo, req.params.id);
-  console.log("cuenta a editar user indicators",preguntas);
+  console.log("cuenta a editar user req", req.user.correo, req.params.id);
+  console.log("cuenta a editar user indicators", preguntas);
 
   if (preguntas.user != req.user.correo) {
     req.flash("error_msg", "Not Authorized");
