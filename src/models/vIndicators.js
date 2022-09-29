@@ -126,6 +126,51 @@ const vIndSchema = new Schema(
             required: false,
             unique: false
         },
+        indOpcion: {
+            type: String,
+            required: false,
+            unique: false
+        },
+        Opcion1: {
+            type: String,
+            required: false,
+            unique: false
+        },
+        Opcion2: {
+            type: String,
+            required: false,
+            unique: false
+        },
+        Opcion3: {
+            type: String,
+            required: false,
+            unique: false
+        },
+        Opcion4: {
+            type: String,
+            required: false,
+            unique: false
+        },
+        Opcion5: {
+            type: String,
+            required: false,
+            unique: false
+        },
+        Opcion6: {
+            type: String,
+            required: false,
+            unique: false
+        },
+        Opcion7: {
+            type: String,
+            required: false,
+            unique: false
+        },
+        Opcion8: {
+            type: String,
+            required: false,
+            unique: false
+        },
         user: {
             type: String,
             required: true,
