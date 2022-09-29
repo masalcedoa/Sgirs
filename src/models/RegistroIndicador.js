@@ -51,11 +51,6 @@ const rIndicatorSchema = new Schema(
             required: false,
             unique: false
         },
-               IND0000010: {
-            type: String,
-            required: false,
-            unique: false
-        },
         VAR0000001: {
             type: String,
             required: false,
@@ -157,9 +152,6 @@ const rIndicatorSchema = new Schema(
             unique: false
         },
 
-
- 
-        
 
         VAR0000001_IND0000001: {
             type: Number,
@@ -1027,11 +1019,96 @@ const rIndicatorSchema = new Schema(
             //        unique: true, 
             trim: true
           },
-         idSector: {
+        idSector: {
             type: String,
             required: true,
             trim: true
         },
+        opcion41: {
+            type: String,
+            required: false,
+            trim: true
+        },
+        opcion42: {
+            type: String,
+            required: false,
+            trim: true
+        },
+        opcion43: {
+            type: String,
+            required: false,
+            trim: true
+        },
+        opcion44: {
+            type: String,
+            required: false,
+            trim: true
+        },
+        opcion45: {
+            type: String,
+            required: false,
+            trim: true
+        },
+        opcion46: {
+            type: String,
+            required: false,
+            trim: true
+        },
+        opcion47: {
+            type: String,
+            required: false,
+            trim: true
+        },
+        opcion48: {
+            type: String,
+            required: false,
+            trim: true
+        },
+        aOpcion1: {
+            type: String,
+            required: false,
+            unique: false
+        },
+        aOpcion2: {
+            type: String,
+            required: false,
+            unique: false
+        },
+        aOpcion3: {
+            type: String,
+            required: false,
+            unique: false
+        },
+        aOpcion4: {
+            type: String,
+            required: false,
+            unique: false
+        },
+        aOpcion5: {
+            type: String,
+            required: false,
+            unique: false
+        },
+        aOpcion6: {
+            type: String,
+            required: false,
+            unique: false
+        },
+        aOpcion7: {
+            type: String,
+            required: false,
+            unique: false
+        },
+        aOpcion8: {
+            type: String,
+            required: false,
+            unique: false
+        },
+        VAR0000000_IND0000004: {
+            type: String,
+            required: false,
+            unique: false
+        }, 
         user: {
             type: String,
             required: true,
