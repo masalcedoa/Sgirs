@@ -37,6 +37,14 @@
 
               <div class="form-group">
 
+
+
+                   {{#if indPregunta}}
+
+
+
+
+
                 <select class="form-control" name="{{idPregunta}}" id="{{idPregunta}}" required>
                   <option disabled selected>Escoger rpta
                   </option>
@@ -54,6 +62,8 @@
                   {{/if}}
 
                 </select>
+
+                {{/if}}
 
                 {{#if indOpcion}}
 
