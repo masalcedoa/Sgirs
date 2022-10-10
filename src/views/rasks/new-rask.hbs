@@ -46,8 +46,10 @@
 
 
                 <select class="form-control" name="{{idPregunta}}" id="{{idPregunta}}" required>
-                  <option disabled selected>Escoger rpta
+                  <option value = "" disabled selected>Escoger respuesta
                   </option>
+
+           
 
                   {{#if respuesta1}}
                   <option value={{ respuesta1 }}>{{ respuesta1 }}</option>
