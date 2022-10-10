@@ -34,7 +34,7 @@ usersCtrl.singup = async (req, res) => {
   let errors = [];
 
   
-  const { documento_sgirs,responsable, direccion, contacto, correo, password, confirm_password, codSector } = req.body;
+  const { documento_sgirs,responsable, direccion, contacto, correo, password, confirm_password, codSector, nit, generador } = req.body;
 
  
 
@@ -60,7 +60,9 @@ usersCtrl.singup = async (req, res) => {
       password,
       confirm_password,
       codSector,
-      documento_sgirs
+      documento_sgirs,
+      nit,
+      generador
     });
   } else {
     // Look for email coincidence
@@ -92,7 +94,7 @@ usersCtrl.singup = async (req, res) => {
       //codSector = seleccionado;
 
       
-      const newUser = new User({ responsable, direccion, contacto,codSector, correo, password });
+      const newUser = new User({ responsable, direccion, contacto,codSector, correo, password, nit, generador });
       newUser.password = await newUser.encryptPassword(password);
 
       for (const property in req.files) {
@@ -238,7 +240,7 @@ usersCtrl.logout = (req, res) => {
 usersCtrl.renderSigninFormRest = async (req, res, User) => {
 
 
-  console.log('Rest Validation - Begin - ',req.user);
+  //console.log('Rest Validation - Begin - ',req.user);
   const lSectores = await sector.find({CodSector:req.user.codSector}).lean();
   const lPeriodos = await Periodo.find({Estado:true}).lean();
 
