@@ -35,7 +35,7 @@ raskCtrl.rederrAskForm = async (req, res) => {
 
   console.log("validacion de cantidad de indicadores in if",cPreguntasA );
   if (cPreguntasA > 0) {
-    cInfo.push({ text: "ya existen preguntas para el periodo seleccionado" });
+    cInfo.push({ text: "ya existen indicadores para el periodo seleccionado" });
     cAdd = "NO";
   }
 
@@ -892,6 +892,14 @@ raskCtrl.createNewrAsk = async (req, res) => {
       newRegistro.FOR0000005 = f3.toFixed(2);
     }
 
+    if (req.body.IND0000006) {
+      var f1 = req.body.VAR0000011_IND0000006;
+      var f2 = req.body.VAR0000012_IND0000006;
+      var f3 = ((f1 / f2) * 100);
+
+      newRegistro.FOR0000006 = f3.toFixed(2);
+    }
+
 
     if (req.body.IND0000007) {
       var f1 = req.body.VAR0000013_IND0000007;
@@ -907,7 +915,7 @@ raskCtrl.createNewrAsk = async (req, res) => {
       var f2 = req.body.VAR0000016_IND0000008;
       var f3 = ((f1 / f2) * 100);
 
-      newRegistro.FOR0000007 = f3.toFixed(2);
+      newRegistro.FOR0000008 = f3.toFixed(2);
     }
 
     if (req.body.IND0000009) {
