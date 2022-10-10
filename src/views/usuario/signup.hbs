@@ -7,21 +7,31 @@
       <div class="card-body">
         <form action="/usuario/signup" method="POST" enctype="multipart/form-data">
           <div class="form-group">
-            <input type="text" class="form-control" name="responsable" placeholder="Responsable"
-              value="{{responsable}}">
+            <input type="text" class="form-control" name="nit" placeholder="NIT" required value="{{nit}}">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="generador" placeholder="Nombre del Gran Generador" required
+              value="{{generador}}">
           </div>
           <div class="form-group">
             <input type="text" class="form-control" name="direccion" placeholder="Direccion" value="{{direccion}}">
           </div>
-
           <div class="form-group">
-            <input type="file" name="documento_sgirs" id="documento_sgirs" value="" class="form-control text-dark border-success" >
+            <input type="text" class="form-control" name="responsable" placeholder="Responsable"
+              value="{{responsable}}">
           </div>
-
-
           <div class="form-group">
             <input type="text" class="form-control" name="contacto" placeholder="Contacto" value="{{contacto}}">
           </div>
+
+
+          <div class="form-group">
+            <label for="Name">Anexar documento del SGIRS</label>
+            <input type="file" name="documento_sgirs" id="documento_sgirs" value=""
+              class="form-control text-dark border-success">
+          </div>
+
+
          
           <div class="form-group">
             <select class="form-control" name="codSector"  id="codSector"  required>
