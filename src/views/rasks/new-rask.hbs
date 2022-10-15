@@ -45,8 +45,9 @@
 
 
 
-                <select class="form-control" name="{{idPregunta}}" id="{{idPregunta}}" required>
-                  <option value = "" disabled selected>Escoger respuesta
+
+                <select class="form-control" name="{{idPregunta}}" id="{{idPregunta}}" required onchange="val()">
+                  <option value="" disabled selected>Escoger respuesta
                   </option>
 
            
@@ -207,3 +208,102 @@
     </div>
   </div>
 </div>
+
+
+<script>
+  function val() {
+    var testData1 = !!document.getElementById("P00000010");
+    var testData2 = !!document.getElementById("P00000011");
+    var testData3 = !!document.getElementById("P00000012");
+    var testData15 = !!document.getElementById("P00000015");
+
+    console.log("Is Not null?", testData1, testData2, testData3);
+
+
+    if ((testData1)) {
+
+      var cod1 = document.getElementById("P00000010").value;
+
+      if ((cod1 != "SI")) {
+
+        var testData4 = !!document.getElementById("P00000013");
+        var testData13_D = !!document.getElementById("P00000013_D");
+
+        if ((testData4)) {
+          document.getElementById("P00000013").value = "NO";
+          document.getElementById("P00000013").disabled = true;
+        }
+        
+        if ((testData13_D)) {
+          document.getElementById("P00000013_D").disabled = true;
+        }
+      }
+    }
+
+    if ((testData2)) {
+
+      var cod2 = document.getElementById("P00000011").value;
+
+      if ((cod2 != "SI")) {
+
+        var testData4 = !!document.getElementById("P00000013");
+        var testData13_D = !!document.getElementById("P00000013_D");
+
+        if ((testData4)) {
+          document.getElementById("P00000013").value = "NO";
+          document.getElementById("P00000013").disabled = true;
+        }
+
+        if ((testData13_D)) {
+          document.getElementById("P00000013_D").disabled = true;
+        }
+      }
+    }
+
+    if ((testData3)) {
+
+      var cod3 = document.getElementById("P00000012").value;
+
+      if ((cod3 != "SI")) {
+
+        var testData4 = !!document.getElementById("P00000013");
+        var testData13_D = !!document.getElementById("P00000013_D");
+
+        if ((testData4)) {
+          document.getElementById("P00000013").value = "NO";
+          document.getElementById("P00000013").disabled = true;
+        }
+
+        if ((testData13_D)) {
+          document.getElementById("P00000013_D").disabled = true;
+        }
+      }
+    }
+
+    if ((testData15)) {
+
+      var cod15 = document.getElementById("P00000015").value;
+
+      if ((cod15 == "SI")) {
+
+        var testData16_T = !!document.getElementById("P00000016_T");
+        console.log("evalua 15",testData16_T)
+
+        if ((testData16_T)) {
+         
+          document.getElementById("P00000016_T").value = "";
+          document.getElementById("P00000016_T").disabled = true;
+        }
+      } else {
+                var testData16_T = !!document.getElementById("P00000016_T");
+        console.log("evalua 16",testData16_T)
+
+        if ((testData16_T)) {
+
+          document.getElementById("P00000016_T").disabled = false;
+        }
+      }
+    }
+
+  }
+</script>
