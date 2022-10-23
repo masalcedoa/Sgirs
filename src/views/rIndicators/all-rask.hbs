@@ -23,6 +23,122 @@
             <TH>Resultado</TH>
           </TR>
           <TR ALIGN=left>
+
+                        {{#if IND0000011}}
+          <TR>
+
+
+
+            <TD>{{IND0000011}} </TD>
+
+
+            <TD>
+                {{#if VAR0000024_IND0000011}}<div class='form-group'>
+                {{VAR0000024}}
+              </div> {{/if}}
+
+            </TD>
+            <TD align="center">
+
+              {{#if VAR0000024_IND0000011}}<div class='form-group'>
+                {{VAR0000024_IND0000011}}
+              </div> {{/if}}
+
+
+            </TD>
+            <TD align="center">
+              {{#if FOR0000011}}
+              <div class='form-group'>
+                {{FOR0000011}}
+                {{/if}}
+            </TD>
+
+          </TR>
+
+          {{/if}}
+
+                                  {{#if IND0000012}}
+          <TR>
+
+
+
+            <TD>{{IND0000012}} </TD>
+
+
+            <TD>
+                {{#if VAR0000025_IND0000012}}<div class='form-group'>
+                {{VAR0000025}}
+              </div> {{/if}}
+
+            </TD>
+            <TD align="center">
+
+              {{#if VAR0000025_IND0000012}}<div class='form-group'>
+                {{VAR0000025_IND0000012}}
+              </div> {{/if}}
+
+
+            </TD>
+            <TD align="center">
+              {{#if FOR0000011}}
+              <div class='form-group'>
+                {{FOR0000011}}
+                {{/if}}
+            </TD>
+
+          </TR>
+
+          {{/if}}
+
+
+
+                        {{#if IND0000000}}
+          <TR>
+
+
+
+            <TD>{{IND0000000}} </TD>
+
+
+            <TD>
+              {{#if VAR0000021_IND0000000}}
+              <div class='form-group'>
+                {{VAR0000021}}
+              </div>
+              {{/if}}
+              {{#if VAR0000022_IND0000000}}<div class='form-group'>
+                {{VAR0000022}}
+              </div> {{/if}}
+              {{#if VAR0000023_IND0000000}}<div class='form-group'>
+                {{VAR0000023}}
+              </div> {{/if}}
+
+            </TD>
+            <TD align="center">
+
+              {{#if VAR0000021_IND0000000}}<div class='form-group'>
+                {{VAR0000021_IND0000000}}
+              </div> {{/if}}
+              {{#if VAR0000022_IND0000000}}<div class='form-group'>
+                {{VAR0000022_IND0000000}}
+              </div> {{/if}}
+              {{#if VAR0000023_IND0000000}}<div class='form-group'>
+                {{VAR0000023_IND0000000}}
+              </div> {{/if}}
+
+
+            </TD>
+            <TD align="center">
+              {{#if FOR0000000}}
+              <div class='form-group'>
+                {{FOR0000000}}
+                {{/if}}
+            </TD>
+
+          </TR>
+
+          {{/if}}
+
           
            {{#if IND0000001}}
           <TR>
@@ -1623,7 +1739,7 @@
   <div class="card mx-auto">
     <div class="card-body">
       <h1>Hello {{user.name}}</h1>
-      <p clsss="lead">No hay preguntas aun registradas.</p>
+      <p clsss="lead">No hay indicadores aun registrados.</p>
       <a href="/rindicators/add" class="btn btn-success btn-block">Create One!</a>
     </div>
   </div>
