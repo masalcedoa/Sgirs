@@ -16,54 +16,60 @@ raskCtrl.rederrAskForm = async (req, res) => {
   console.log("cuenta que consulta indicador CodSector:", req.user.codSector, req.user.periodo);
 
 
-  const lPreguntas = await vIndicador.find({ idSector: req.user.codSector, periodo: req.user.periodo })
+  const lPreguntas = await vIndicador.find({ idSector: req.user.codSector, periodo: req.user.periodo})
     .sort({ idIndicador: "asc" })
     .lean();
 
   console.log("preguntas  devueltas: ", lPreguntas);
 
 
-  const cPreguntasA = 0;
+  const cPreguntasA2 = 0;
   var cAdd = "SI";
-  const cInfo = [];
+  const cInfo2 = [];
   
 
 
  if (req.user.codSector != "SEC004") {
 
-  const cPreguntasA = await registro.find({ codSector: req.user.codSector, periodo: req.user.periodo, user : req.user.correo }).count()
+    const cPreguntasA2 = await registro.find({ idSector: req.user.codSector, periodo: req.user.periodo, user : req.user.correo }).count()
 
-  console.log("validacion de cantidad de indicadores in if",cPreguntasA );
-  if (cPreguntasA > 0) {
-    cInfo.push({ text: "ya existen indicadores para el periodo seleccionado" });
+  console.log("validacion de cantidad de indicadores in if",cPreguntasA2 );
+ /* if (cPreguntasA2 > 0) {
+    cInfo2.push({ text: "ya existen indicadores para el periodo seleccionado inf" });
+    cAdd = "NO";
+  }*/
+
+  if (cPreguntasA2 <= 0) {
+    cAdd = "SI";
+    cInfo2.pop();
+    console.log("entre a cargar si",cPreguntasA2);
+
+  } else {
+    console.log("entre a cargar NO",cPreguntasA2);
+    cInfo2.push({ text: "ya existen preguntas para el periodo seleccionado" });
     cAdd = "NO";
   }
+
+
+
 
 
 }  
 
 
-if (cInfo.length > 0) {
+if (cInfo2.length > 0) {
   res.render("index", {
-    cInfo
+    cInfo2
   });
   req.flash("error_msg", "ya existen indicadores para el periodo seleccionado");
   res.redirect("/");
 
 } else {
-    res.render('rIndicators/new-rask', { lPreguntas });
+    res.render('rindicators/new-rask', { lPreguntas });
   console.log("Termine de renderizar");
   }
-
-
-
-
-
   //res.render('rIndicators/new-rask', { lPreguntas });
-
-
   console.log("Termine de renderizar");
-
 }
 
 raskCtrl.createNewrAsk = async (req, res) => {
@@ -88,6 +94,8 @@ raskCtrl.createNewrAsk = async (req, res) => {
     IND0000008,
     IND0000009,
     IND0000010,
+    IND0000011,
+    IND0000012,
     VAR0000001,
     VAR0000002,
     VAR0000003,
@@ -108,7 +116,11 @@ raskCtrl.createNewrAsk = async (req, res) => {
     VAR0000018,
     VAR0000019,
     VAR0000020,
-
+    VAR0000021,
+    VAR0000022,
+    VAR0000023,
+    VAR0000024,
+    VAR0000025,
     VAR0000001_IND0000001,
     VAR0000002_IND0000001,
     VAR0000003_IND0000001, VAR0000004_IND0000001, VAR0000005_IND0000001, VAR0000006_IND0000001,
@@ -174,8 +186,7 @@ raskCtrl.createNewrAsk = async (req, res) => {
     , VAR0000018_IND0000004
     , VAR0000019_IND0000004
     , VAR0000020_IND0000004
-    ,
-    VAR0000001_IND0000005
+    , VAR0000001_IND0000005
     , VAR0000002_IND0000005
     , VAR0000003_IND0000005
     , VAR0000004_IND0000005
@@ -195,8 +206,7 @@ raskCtrl.createNewrAsk = async (req, res) => {
     , VAR0000018_IND0000005
     , VAR0000019_IND0000005
     , VAR0000020_IND0000005
-    ,
-    VAR0000001_IND0000006
+    , VAR0000001_IND0000006
     , VAR0000002_IND0000006
     , VAR0000003_IND0000006
     , VAR0000004_IND0000006
@@ -216,8 +226,7 @@ raskCtrl.createNewrAsk = async (req, res) => {
     , VAR0000018_IND0000006
     , VAR0000019_IND0000006
     , VAR0000020_IND0000006
-    ,
-    VAR0000001_IND0000007
+    , VAR0000001_IND0000007
     , VAR0000002_IND0000007
     , VAR0000003_IND0000007
     , VAR0000004_IND0000007
@@ -237,8 +246,7 @@ raskCtrl.createNewrAsk = async (req, res) => {
     , VAR0000018_IND0000007
     , VAR0000019_IND0000007
     , VAR0000020_IND0000007
-    ,
-    VAR0000001_IND0000008
+    , VAR0000001_IND0000008
     , VAR0000002_IND0000008
     , VAR0000003_IND0000008
     , VAR0000004_IND0000008
@@ -258,8 +266,7 @@ raskCtrl.createNewrAsk = async (req, res) => {
     , VAR0000018_IND0000008
     , VAR0000019_IND0000008
     , VAR0000020_IND0000008
-    ,
-    VAR0000001_IND0000009
+    , VAR0000001_IND0000009
     , VAR0000002_IND0000009
     , VAR0000003_IND0000009
     , VAR0000004_IND0000009
@@ -279,8 +286,7 @@ raskCtrl.createNewrAsk = async (req, res) => {
     , VAR0000018_IND0000009
     , VAR0000019_IND0000009
     , VAR0000020_IND0000009
-    ,
-    VAR0000001_IND0000010
+    , VAR0000001_IND0000010
     , VAR0000002_IND0000010
     , VAR0000003_IND0000010
     , VAR0000004_IND0000010
@@ -299,7 +305,13 @@ raskCtrl.createNewrAsk = async (req, res) => {
     , VAR0000017_IND0000010
     , VAR0000018_IND0000010
     , VAR0000019_IND0000010
-    , VAR0000020_IND0000010,
+    , VAR0000020_IND0000010
+    , VAR0000021_IND0000000
+    , VAR0000022_IND0000000
+    , VAR0000023_IND0000000
+    , VAR0000024_IND0000011
+    , VAR0000025_IND0000012
+    ,FOR0000000,
     FOR0000001,
     FOR0000002,
     FOR0000003,
@@ -310,6 +322,8 @@ raskCtrl.createNewrAsk = async (req, res) => {
     FOR0000008,
     FOR0000009,
     FOR0000010,
+    FOR0000011,
+    FOR0000012,
     opcion41,
     opcion42,
     opcion43,
@@ -326,7 +340,10 @@ raskCtrl.createNewrAsk = async (req, res) => {
     aOpcion6,
     aOpcion7,
     aOpcion8,
-    VAR0000000_IND0000004
+    VAR0000000_IND0000004,
+    evento,
+lugar,       
+aforo
 
 
   } = req.body;
@@ -348,6 +365,8 @@ raskCtrl.createNewrAsk = async (req, res) => {
       IND0000008,
       IND0000009,
       IND0000010,
+      IND0000011,
+      IND0000012,
       VAR0000001,
       VAR0000002,
       VAR0000003,
@@ -368,7 +387,11 @@ raskCtrl.createNewrAsk = async (req, res) => {
       VAR0000018,
       VAR0000019,
       VAR0000020,
-
+      VAR0000021,
+      VAR0000022,
+      VAR0000023,
+      VAR0000024,
+      VAR0000025,
       VAR0000001_IND0000001,
       VAR0000002_IND0000001,
       VAR0000003_IND0000001, VAR0000004_IND0000001, VAR0000005_IND0000001, VAR0000006_IND0000001,
@@ -559,7 +582,13 @@ raskCtrl.createNewrAsk = async (req, res) => {
       , VAR0000017_IND0000010
       , VAR0000018_IND0000010
       , VAR0000019_IND0000010
-      , VAR0000020_IND0000010,
+      , VAR0000020_IND0000010
+      , VAR0000021_IND0000000
+      , VAR0000022_IND0000000
+      , VAR0000023_IND0000000
+      , VAR0000024_IND0000011
+      , VAR0000025_IND0000012
+      ,FOR0000000,
       FOR0000001,
       FOR0000002,
       FOR0000003,
@@ -570,6 +599,8 @@ raskCtrl.createNewrAsk = async (req, res) => {
       FOR0000008,
       FOR0000009,
       FOR0000010,
+      FOR0000011,
+      FOR0000012,
       opcion41,
       opcion42,
       opcion43,
@@ -586,7 +617,10 @@ raskCtrl.createNewrAsk = async (req, res) => {
       aOpcion6,
       aOpcion7,
       aOpcion8,
-      VAR0000000_IND0000004
+      VAR0000000_IND0000004,
+      evento,
+lugar,       
+aforo
 
     });
   } else {
@@ -610,6 +644,8 @@ raskCtrl.createNewrAsk = async (req, res) => {
       IND0000008,
       IND0000009,
       IND0000010,
+      IND0000011,
+      IND0000012,
       VAR0000001,
       VAR0000002,
       VAR0000003,
@@ -630,7 +666,11 @@ raskCtrl.createNewrAsk = async (req, res) => {
       VAR0000018,
       VAR0000019,
       VAR0000020,
-
+      VAR0000021,
+      VAR0000022,
+      VAR0000023,
+      VAR0000024,
+      VAR0000025,
       VAR0000001_IND0000001,
       VAR0000002_IND0000001,
       VAR0000003_IND0000001, VAR0000004_IND0000001, VAR0000005_IND0000001, VAR0000006_IND0000001,
@@ -821,7 +861,13 @@ raskCtrl.createNewrAsk = async (req, res) => {
       , VAR0000017_IND0000010
       , VAR0000018_IND0000010
       , VAR0000019_IND0000010
-      , VAR0000020_IND0000010,
+      , VAR0000020_IND0000010
+      , VAR0000021_IND0000000
+      , VAR0000022_IND0000000
+      , VAR0000023_IND0000000
+      , VAR0000024_IND0000011
+      , VAR0000025_IND0000012
+      ,FOR0000000,
       FOR0000001,
       FOR0000002,
       FOR0000003,
@@ -832,6 +878,8 @@ raskCtrl.createNewrAsk = async (req, res) => {
       FOR0000008,
       FOR0000009,
       FOR0000010,
+      FOR0000011,
+      FOR0000012,
       opcion41,
       opcion42,
       opcion43,
@@ -848,7 +896,10 @@ raskCtrl.createNewrAsk = async (req, res) => {
       aOpcion6,
       aOpcion7,
       aOpcion8,
-      VAR0000000_IND0000004
+      VAR0000000_IND0000004,
+      evento,
+lugar,       
+aforo
     });
 
     //newRegistro.user = req.user.id;
@@ -859,8 +910,6 @@ raskCtrl.createNewrAsk = async (req, res) => {
     console.log("antes de cargar la formula", req.body.VAR0000001_IND0000001);
     var f1 = 0.0;
     var f2 = 0.0;
-
-
     //f1
 
     if (req.body.IND0000001) {
@@ -998,6 +1047,11 @@ raskCtrl.createNewrAsk = async (req, res) => {
       var vuar = ((contYes / 8) * 100);
 
 
+      if ((!req.body.IND0000011) || (!req.body.IND0000011)) {
+
+      console.log("entre a evaluar uar");
+
+
       if (vuar == 100) {
         newRegistro.VAR0000000_IND0000004 = "Cumple totalmente";
       }else if (vuar >= 60 ){
@@ -1005,6 +1059,8 @@ raskCtrl.createNewrAsk = async (req, res) => {
       } else {
         newRegistro.VAR0000000_IND0000004 = "No cumple";
       }
+
+    } 
 
 
 
@@ -1031,6 +1087,8 @@ raskCtrl.renderrAsk = async (req, res) => {
     .sort({ createdAt: "desc" })
     .lean();
 
+
+    console.log("consulta de indicadores",req.user,preguntas);
 
   res.render("rIndicators/all-rask", { preguntas });
 }
@@ -1237,5 +1295,4 @@ raskCtrl.updaterAsk = async (req, res) => {
   saveImage();
 };
 */
-
 module.exports = raskCtrl;
