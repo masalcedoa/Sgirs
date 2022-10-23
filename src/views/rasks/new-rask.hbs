@@ -1,4 +1,4 @@
-<div class="col-md-9 mx-auto">
+<div class="col-md-15 mx-auto">
   <div class="card text-center">
     <div class="card-header">
       <h3>Registro de Preguntas</h3>
@@ -39,18 +39,17 @@
 
 
 
-                   {{#if indPregunta}}
 
 
 
 
-
+            {{#if indPregunta}}
 
                 <select class="form-control" name="{{idPregunta}}" id="{{idPregunta}}" required onchange="val()">
                   <option value="" disabled selected>Escoger respuesta
                   </option>
 
-           
+
 
                   {{#if respuesta1}}
                   <option value={{ respuesta1 }}>{{ respuesta1 }}</option>
@@ -66,7 +65,8 @@
 
                 </select>
 
-                {{/if}}
+              {{/if}}
+
 
                 {{#if indOpcion}}
 
@@ -166,7 +166,8 @@
                 {{#if indTexto }}
 
                 <div class="form-group">
-                  <textarea name="{{idPregunta}}_T" class="form-control" placeholder="Observacion"></textarea>
+                  <textarea name="{{idPregunta}}_T" id="{{idPregunta}}_T" class="form-control"
+                    placeholder="Observacion"></textarea>
                 </div>
 
 
@@ -224,60 +225,49 @@
 
       var cod1 = document.getElementById("P00000010").value;
 
-      if ((cod1 != "SI")) {
-
-        var testData4 = !!document.getElementById("P00000013");
-        var testData13_D = !!document.getElementById("P00000013_D");
-
-        if ((testData4)) {
-          document.getElementById("P00000013").value = "NO";
-          document.getElementById("P00000013").disabled = true;
-        }
-        
-        if ((testData13_D)) {
-          document.getElementById("P00000013_D").disabled = true;
-        }
-      }
     }
 
     if ((testData2)) {
 
       var cod2 = document.getElementById("P00000011").value;
 
-      if ((cod2 != "SI")) {
-
-        var testData4 = !!document.getElementById("P00000013");
-        var testData13_D = !!document.getElementById("P00000013_D");
-
-        if ((testData4)) {
-          document.getElementById("P00000013").value = "NO";
-          document.getElementById("P00000013").disabled = true;
-        }
-
-        if ((testData13_D)) {
-          document.getElementById("P00000013_D").disabled = true;
-        }
-      }
     }
 
     if ((testData3)) {
 
       var cod3 = document.getElementById("P00000012").value;
 
-      if ((cod3 != "SI")) {
+    }
 
-        var testData4 = !!document.getElementById("P00000013");
-        var testData13_D = !!document.getElementById("P00000013_D");
 
-        if ((testData4)) {
-          document.getElementById("P00000013").value = "NO";
-          document.getElementById("P00000013").disabled = true;
-        }
+    var testData13 = !!document.getElementById("P00000013");
+    var testData13_D = !!document.getElementById("P00000013_D");
 
-        if ((testData13_D)) {
-          document.getElementById("P00000013_D").disabled = true;
-        }
+    console.log("seleccionado:",cod1,cod2,cod3);
+
+    if ((cod1 == "NO") || (cod2 == "NO") || (cod3 == "NO") 
+      || (cod1 == "N/A") || (cod2 == "N/A") || (cod3 == "N/A")
+    ) {
+
+      if ((testData13)) {
+        document.getElementById("P00000013").value = "NO";
+        document.getElementById("P00000013").disabled = true;
       }
+
+      if ((testData13_D)) {
+        document.getElementById("P00000013_D").disabled = true;
+      }
+    } else {
+
+      if ((testData13)) {
+        //document.getElementById("P00000013").value = "";
+        document.getElementById("P00000013").disabled = false;
+      }
+
+      if ((testData13_D)) {
+        document.getElementById("P00000013_D").disabled = false;
+      }
+
     }
 
     if ((testData15)) {
@@ -304,6 +294,8 @@
         }
       }
     }
+
+
 
   }
 </script>
