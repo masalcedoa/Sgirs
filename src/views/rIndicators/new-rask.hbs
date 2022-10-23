@@ -7,8 +7,6 @@
 
       <form action="/rindicators/new-rask" method="POST">
 
-
-
         <TABLE BORDER WIDTH="100%">
           <TR>
             <TH>Indicador</TH>
@@ -37,6 +35,61 @@
             <TD width="650">
 
               {{#if indOpcion}}
+
+              {{#if VAR0000021}}
+
+
+
+              <div class="form-group">
+                <input type="text" class="form-control" name="VAR0000021_{{idIndicador}}" placeholder="{{VAR0000021}}"
+                  value="" class="form-control text-dark border-success" required>
+              </div>
+
+              <div style="visibility: hidden">
+                <input type="text" name="VAR0000021" id="VAR0000021" value="{{VAR0000021}}"
+                  class="form-control text-dark border-success">
+              </div>
+
+
+
+              {{/if}}
+
+              {{#if VAR0000022}}
+
+
+
+              <div class="form-group">
+                <input type="text" class="form-control" name="VAR0000022_{{idIndicador}}" placeholder="{{VAR0000022}}"
+                  value="" class="form-control text-dark border-success" required>
+              </div>
+
+              <div style="visibility: hidden">
+                <input type="text" name="VAR0000022" id="VAR0000022" value="{{VAR0000022}}"
+                  class="form-control text-dark border-success">
+              </div>
+
+
+
+              {{/if}}
+
+
+              {{#if VAR0000023}}
+
+
+
+              <div class="form-group">
+                <input type="text" class="form-control" name="VAR0000023_{{idIndicador}}" placeholder="{{VAR0000023}}"
+                  value="" class="form-control text-dark border-success" required>
+              </div>
+
+              <div style="visibility: hidden">
+                <input type="text" name="VAR0000023" id="VAR0000023" value="{{VAR0000023}}"
+                  class="form-control text-dark border-success">
+              </div>
+
+
+
+              {{/if}}
 
 
 
@@ -399,7 +452,55 @@
 
               {{/if}}
 
+                            {{#if VAR0000024}}
+
+
+
+              <div class="form-group">
+                <input type="number" class="form-control" name="VAR0000024_{{idIndicador}}" placeholder="{{VAR0000024}}"
+                  value="" class="form-control text-dark border-success" step="0.01" required>
+              </div>
+
+              <div style="visibility: hidden">
+                <input type="text" name="VAR0000024" id="VAR0000024" value="{{VAR0000024}}"
+                  class="form-control text-dark border-success">
+              </div>
+
+
+
               {{/if}}
+
+
+
+
+              {{#if VAR0000025}}
+
+
+
+              <div class="form-group">
+                <input type="number" class="form-control" name="VAR0000025_{{idIndicador}}" placeholder="{{VAR0000025}}"
+                  value="" class="form-control text-dark border-success" step="0.01" required>
+              </div>
+
+              <div style="visibility: hidden">
+                <input type="text" name="VAR0000025" id="VAR0000025" value="{{VAR0000025}}"
+                  class="form-control text-dark border-success">
+              </div>
+
+
+
+              {{/if}}
+
+
+              {{/if}}
+
+
+              
+
+
+
+              
+
 
               {{#if indOpcion4 }}
 
