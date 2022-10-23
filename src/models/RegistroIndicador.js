@@ -51,6 +51,18 @@ const rIndicatorSchema = new Schema(
             required: false,
             unique: false
         },
+
+        IND0000011: {
+            type: String,
+            required: false,
+            unique: false
+        },
+        IND0000012: {
+            type: String,
+            required: false,
+            unique: false
+        },
+
         VAR0000001: {
             type: String,
             required: false,
@@ -151,8 +163,31 @@ const rIndicatorSchema = new Schema(
             required: false,
             unique: false
         },
-
-
+        VAR0000021: {
+            type: String,
+            required: false,
+            unique: false
+        },
+        VAR0000022: {
+            type: String,
+            required: false,
+            unique: false
+        },
+        VAR0000023: {
+            type: String,
+            required: false,
+            unique: false
+        },
+        VAR0000024: {
+            type: String,
+            required: false,
+            unique: false
+        },
+        VAR0000025: {
+            type: String,
+            required: false,
+            unique: false
+        },
         VAR0000001_IND0000001: {
             type: Number,
             required: false,
@@ -962,6 +997,40 @@ const rIndicatorSchema = new Schema(
             type: Number,
             required: false,
             unique: false
+        },VAR0000021_IND0000000: {
+            type: Number,
+            required: false,
+            unique: false
+        },
+        VAR0000022_IND0000000: {
+            type: Number,
+            required: false,
+            unique: false
+        },
+        VAR0000023_IND0000000: {
+            type: Number,
+            required: false,
+            unique: false
+        },     
+        FOR0000000: {
+            type: String,
+            required: false,
+            unique: false
+        },
+        VAR0000024_IND0000011: {
+            type: Number,
+            required: false,
+            unique: false
+        },
+        VAR0000025_IND0000012: {
+            type: Number,
+            required: false,
+            unique: false
+        },     
+        FOR0000000: {
+            type: String,
+            required: false,
+            unique: false
         },
         FOR0000001: {
             type: String,
@@ -1009,6 +1078,16 @@ const rIndicatorSchema = new Schema(
             unique: false
         },
         FOR0000010: {
+            type: String,
+            required: false,
+            unique: false
+        },
+        FOR0000011: {
+            type: String,
+            required: false,
+            unique: false
+        },
+        FOR0000012: {
             type: String,
             required: false,
             unique: false
@@ -1109,6 +1188,21 @@ const rIndicatorSchema = new Schema(
             required: false,
             unique: false
         }, 
+        evento: {
+            type: String,
+            required: false,
+            unique: false
+        },
+        lugar: {
+            type: String,
+            required: false,
+            unique: false
+        },       
+        aforo: {
+            type: String,
+            required: false,
+            unique: false
+        },
         user: {
             type: String,
             required: true,
