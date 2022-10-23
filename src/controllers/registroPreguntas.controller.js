@@ -53,7 +53,7 @@ raskCtrl.rederrAskForm = async (req, res) => {
   console.log("cuenta que consulta:", req.user.correo);
 
 
-  const lPreguntas = await respuestasPreguntas.find({ codSector: req.user.codSector, periodo: req.user.periodo })
+  const lPreguntas = await respuestasPreguntas.find({ codSector: req.user.codSector, periodo: req.user.periodo})
     .sort({ idPregunta: "asc" })
     .lean();
 
@@ -76,12 +76,24 @@ raskCtrl.rederrAskForm = async (req, res) => {
   
 if (req.user.codSector != "SEC004") {
 
-  
-  const cPreguntasA = await registro.find({ codSector: req.user.codSector, periodo: req.user.periodo, user : req.user.correo }).count()
+  console.log("antes de validacion de cantidad de preguntas in if",req.user );
 
+  //const cPreguntasA = await registro.find({ codSector: req.user.codSector, periodo: req.user.periodo, user : req.user.correo }).count()
+
+
+  const cPreguntasA = await registro.find({ CodSector: req.user.codSector, periodo: req.user.periodo, user : req.user.correo}).count();
+  
   
   console.log("validacion de cantidad de preguntas in if",cPreguntasA );
-  if (cPreguntasA > 0) {
+  
+
+  if (cPreguntasA <= 0) {
+    cAdd = "SI";
+    cInfo.pop();
+    console.log("entre a cargar si",cPreguntasA);
+
+  } else {
+    console.log("entre a cargar NO",cPreguntasA);
     cInfo.push({ text: "ya existen preguntas para el periodo seleccionado" });
     cAdd = "NO";
   }
