@@ -34,7 +34,7 @@ usersCtrl.singup = async (req, res) => {
   let errors = [];
 
   
-  const { documento_sgirs,responsable, direccion, contacto, correo, password, confirm_password, codSector, nit, generador } = req.body;
+  const { documento_sgirs,responsable, direccion, contacto, correo, password, confirm_password, codSector, nit, generador, indAdministrador, indOperador } = req.body;
 
  
 
@@ -62,7 +62,8 @@ usersCtrl.singup = async (req, res) => {
       codSector,
       documento_sgirs,
       nit,
-      generador
+      generador,
+      indAdministrador, indOperador
     });
   } else {
     // Look for email coincidence
@@ -94,7 +95,7 @@ usersCtrl.singup = async (req, res) => {
       //codSector = seleccionado;
 
       
-      const newUser = new User({ responsable, direccion, contacto,codSector, correo, password, nit, generador });
+      const newUser = new User({ responsable, direccion, contacto,codSector, correo, password, nit, generador,indAdministrador, indOperador });
       newUser.password = await newUser.encryptPassword(password);
 
       for (const property in req.files) {
@@ -104,6 +105,9 @@ usersCtrl.singup = async (req, res) => {
           newUser.documento_sgirs =  req.files['documento_sgirs'][0].filename;
         }
       }  
+
+      newUser.indAdministrador = false;
+      newUser.indOperador = false;
 
 
       await newUser.save();
