@@ -10,14 +10,15 @@ body {
       #e2e2e2,
       #c9d6ff
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    font-family: helvetica;
-
-    /*color: purple;*/
+    font-family: 'Raleway';
+   /*color: purple;*/
     background-color: #DCDCDC;
     font-size: 15px ;
     font-style: normal;
+    font-weight: normal;
     color: #2C2E3A;
-   background-image: url("/img/FONDO_REGISTROS_SGIRS_APP-02.png")
+    background-image: url("/img/FONDO REGISTROS SGIRS APP-02.png");
+    src: url('fonts/Raleway-Thin.ttf') format('truetype');
 
 
   }
