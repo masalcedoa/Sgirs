@@ -14,6 +14,14 @@ const UserSchema = new Schema(
       documento_sgirs: { type: String, required: false, trim: true },
       nit: { type: String, trim: true },
       generador: { type: String, trim: true },
+      indAdmnistrador: {
+        type: Boolean,
+        false: false,
+      },
+      indOperador: {
+        type: Boolean,
+        false: false,
+      }
     },
     {
       timestamps: true,
