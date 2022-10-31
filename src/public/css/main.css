@@ -1,5 +1,5 @@
 body {
-    background: #03175a; /* fallback for old browsers */
+    background: #93C01F; /* fallback for old browsers */
     background: -webkit-linear-gradient(
       to right,
       #e2e2e2,
@@ -10,8 +10,31 @@ body {
       #e2e2e2,
       #c9d6ff
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: helvetica;
+
+    /*color: purple;*/
+    background-color: #DCDCDC;
+    font-size: 15px ;
+    font-style: normal;
+    color: #2C2E3A;
+   background-image: url("/img/FONDO_REGISTROS_SGIRS_APP-02.png")
+
+
   }
   
   .logo {
     width: 30%;
   }
+
+  .button {
+    background-color: #93C01F;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
